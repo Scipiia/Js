@@ -7558,3 +7558,1804 @@ function unite (a,b,c){
 console.log(unite([1, 2, 3], [4, 5, 6], [7, 8, 9]));
 */
                     //Функция, сливающая массивы в один
+/*
+function merge(...arrs) {
+    return [].concat(...arrs);      //метод concat
+}                                   //сливает массивы
+
+let result = merge([1, 2, 3], [4, 5, 6], [7, 8, 9]);
+console.log(result); // выведет [1, 2, 3, 4, 5, 6, 7, 8, 9]
+*//*
+result = merge([1, 2, 3], [4, 5, 6], [7, 8, 9]);
+console.log(result);
+function merge(a, b, c) { return [].concat(a, b, c); }
+*/
+                //Пересечение произвольного количества массивов на JavaScript
+/*
+let result = getInt([1, 2, 3], [2, 3, 4], [4, 3, 2]);
+console.log(result); // выведет [2, 3]
+*//*
+let arr1 = [1,2,3,4];
+let arr2 = [1,3,4,5];
+function getInt(arr1, arr2) {
+    let result = [];
+
+    for (let elem of arr1) {
+        if (inArray(elem, arr2)) {
+            result.push(elem);
+        }
+    }
+
+    return result;
+}
+console.log(getInt(arr1, arr2));
+
+function inArray(elem, arr) {
+    return arr.indexOf(elem) !== -1;
+}
+*//*
+function getInt(...arrs) {
+    let result = [];
+
+    let arr0 = arrs.shift();
+
+    for (let elem of arr0) {
+        if (inArrays(elem, arrs)) {
+            result.push(elem);
+        }
+    }
+
+    return result;
+}
+
+function inArrays(elem, arrs) {
+    for (let arr of arrs) {
+        if (!inArray(elem, arr)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function inArray(elem, arr) {
+    return arr.indexOf(elem) !== -1;
+}
+
+// Проверим работу:
+let result = getInt([1, 2, 3], [2, 3, 4], [4, 3, 2]);
+console.log(result); // выведет [2, 3]
+*/
+                //Разность произвольного количества массивов на JavaScript
+/*
+function getDiff(arr1, arr2){
+	let result = [];
+
+	let diff1 = getFirstDiff(arr1, arr2);
+	let diff2 = getFirstDiff(arr2, arr1);
+
+	return [].concat( diff1, diff2 );  //вместо [] можно написать result
+}
+
+function getFirstDiff(arr1, arr2){
+	let result = [];
+    
+	for (let elem of arr1) {
+		if (!inArray(elem, arr2)) {
+			result.push(elem);
+		}
+	}
+    
+	return result;
+}
+
+function inArray(elem, arr){                //!!!!!!!!!!!!!!!!!!
+	return arr.indexOf(elem) !== -1;
+}
+
+let arr1 = [1, 2, 3, 4, 5, 6];
+let arr2 = [1, 2, 3, 5, 6, 7, 8];
+console.log(getDiff(arr1, arr2));
+*/
+                //Деструктуризация массивов в JavaScript
+/*
+let arr = [2025, 12, 31];
+let [year, month, day] = arr;
+
+console.log(year);  // выведет 2025
+console.log(month); // выведет 12
+console.log(day);   // выведет 31
+*//*
+let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+let [name, family, work, profession, year] = arr;
+
+console.log(name);
+*/
+                //Массив из функции
+/*
+function func() {
+	return [2025, 12, 31];
+}
+
+let [year, month, day] = func();
+console.log(year);
+*//*
+function func() {
+    return ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+}
+let [name, family, work, profession, year] = func();
+console.log(name);
+*/
+                //Пропуск значений
+/*
+let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+
+let [,,department, position,] = arr;
+console.log(department);
+console.log(position);
+*/
+                //Меньше элементов
+        //Если в массиве меньше элементов, чем переменных, то в "лишние" переменные запишется undefined
+/*
+let arr = [2025, 12];
+let [year, month, day] = arr;
+
+console.log(year);  // выведет 2025
+console.log(month); // выведет 12
+console.log(day);   // выведет undefined
+*/
+                //Пропуск значений
+/*
+let arr = [2025, 12, 31, 23, 59, 59];
+let [year, month, day] = arr;
+
+console.log(year);  // выведет 2025
+console.log(month); // выведет 12
+console.log(day);   // выведет 31
+*/
+                //Остаток
+        //Если в массиве больше элементов, чем переменных, при необходимости лишние элементы можно записать в массив с помощью оператора rest:
+/*
+let arr = [2025, 12, 31, 23, 59, 59];
+let [year, month, day, ...time] = arr;      //... rest !!!!!!!!!
+
+console.log(year);  // выведет 2025
+console.log(month); // выведет 12
+console.log(day);   // выведет 31
+
+console.log(time);   // выведет [23, 59, 59]
+*//*
+let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+let [name, family, ...work] = arr;
+console.log(name);
+console.log(family);
+console.log(work);
+*/
+                //Значение по умолчанию
+/*
+        //В следующем примере переменной day по умолчанию указано значение 1:
+let arr = [2025, 12];
+let [year, month, day = 1] = arr;
+
+console.log(year);  // выведет 2025
+console.log(month); // выведет 12
+console.log(day);   // выведет 1
+*//*
+        //А вот если для переменной day будет значение в массиве - значение по умолчанию будет проигнорировано:
+let arr = [2025, 12, 31];
+let [year, month, day = 1] = arr;
+
+console.log(year);  // выведет 2025
+console.log(month); // выведет 12
+console.log(day);   // выведет 31
+*//*
+let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист'];
+
+let [name, surname, department, position = "джуниор"] = arr;
+console.log(name);
+console.log(department);
+console.log(surname);
+console.log(position);
+*/
+                //Функции в качестве значения по умолчанию
+/*
+function func() {
+    return (new Date(year, month)).getDate();
+}
+
+let arr = [,,1]
+let [year = func(), month, day] = arr;
+console.log(year);
+console.log(month);
+console.log(day);
+*/
+                //Объявление переменных
+/*
+let arr = [2025, 12, 31];
+let year;
+let month;
+let day;
+
+[year, month, day] = arr;
+*/
+                //Деструктуризация объектов в JavaScript
+/*
+let obj = {
+	year:  2025,
+	month: 12,
+	day:   31,
+};
+
+let {year, month, day} = obj;
+
+console.log(year);  // выведет 2025
+console.log(month); // выведет 12
+console.log(day);   // выведет 31
+//При деструктуризации объектов имена переменных должны совпадать в ключами объекта, порядок переменных и элементов в объекте не имеет значения
+*//*
+let options = {
+    color: 'red',
+    width: 400,
+    height: 500,
+};
+
+let {color, width, height} = options;
+console.log(color);
+console.log(width);
+console.log(height);
+*/
+                //Другие имена переменных
+        //Можно сделать так, чтобы имена переменных не совпадали в именами ключей объекта:
+/*
+let obj = {
+	year:  2025,
+	month: 12,
+	day:   31,
+};
+
+let {year: y, month: m, day: d} = obj;
+
+console.log(y); // выведет 2025
+console.log(m); // выведет 12
+console.log(d); // выведет 31
+*//*
+let options = {
+    color: 'red',
+    width: 400,
+    height: 500,
+};
+
+let {color: c, width: w, height: h} = options;
+console.log(c);
+console.log(w);
+console.log(h);
+*/
+                    //Значения по умолчанию
+        //При деструктуризации объектов можно также указывать значения по умолчанию. При этом, в отличии от деструктуризации массивов, необязательной может быть любая переменная - не обязательно с конца массива.
+/*
+let obj = {
+    month: 12,
+    day: 31,
+};
+
+let { year = 2025, month, day } = obj;
+
+console.log(year);  // выведет 2025
+console.log(month); // выведет 1
+console.log(day);   // выведет 31
+*//*
+let options = {
+    width: 400,
+    height: 500,
+};
+
+let {color = "black", width, height} = options;
+console.log(color);
+console.log(width);
+console.log(height);
+*/
+            //Другие переменные и значения по умолчанию
+    //Можно также менять названия переменных на свои при этом задавая значения по умолчанию:
+/*
+let obj = {
+    month: 12,
+    day: 31,
+};
+
+let { year: y = 2025, month, day } = obj;
+
+console.log(year);  // выведет 2025
+console.log(month); // выведет 1
+console.log(day);   // выведет 31
+*//*
+let options = {
+    width: 400,
+    height: 500,
+};
+
+let {color: c = "black", width: w, height: h} = options;
+console.log(c);   //почему то с полным ключем не работает, странно
+console.log(w);
+console.log(h);
+*/
+                //Функции в качестве значения по умолчанию
+/*
+function func() {
+	return (new Date).getFullYear();     //метод для текущего года, а я его искал
+}
+
+let obj = {
+	month: 12,
+	day:   31,
+};
+
+let {year = func(), month, day} = obj;
+console.log(year);
+console.log(month);
+console.log(day);
+*/
+                //Объект из функции
+/*
+function func() {
+	return obj = {
+		year:  2025,
+		month: 12,
+		day:   31,
+	};
+}
+
+let {year, month, day} = func();
+console.log(year);
+console.log(month);
+console.log(day);
+*/
+            //Объявление переменных
+        //Не обязательно объявлять переменные при деструктуризации. Они могут быть объявлены заранее:
+/*
+let obj = {
+	year:  2025,
+	month: 12,
+	day:   31,
+};
+
+let year, month, day; // объявим переменные заранее
+
+//Тут, однако, в отличии от массивов, есть нюансы.Без команды let перед фигурными 
+//скобками эти фигурные скобки не будут восприняты JavaScript как команда на 
+//деструктуризацию (а будут восприняты как блок кода):
+
+//{ year, month, day } = obj; // не будет работать
+//({ year, month, day } = obj);  //так будет, нужны ()
+*/
+                    //Деструктуризация параметров функций в JavaScript
+/*
+func([2025, 12, 31], [2026, 11, 30]);
+
+function func([year1, month1, day1], [year2, month2, day2]) {
+	console.log(year1);  // выведет 2025
+	console.log(month1); // выведет 12
+	console.log(day1);   // выведет 31
+
+	console.log(year2);  // выведет 2026
+	console.log(month2); // выведет 11
+	console.log(day2);   // выведет 30
+}
+*//*
+func(['Иван', 'Иванов', 'отдел разработки', 'программист', 2000]);
+
+function func([name, surname, department, profession, year]){
+    console.log(name);
+    console.log(surname);
+    console.log(department);
+    console.log(profession);
+    console.log(year);
+}
+*//*
+func(['Иван', 'Иванов', 'отдел разработки', 'программист', 2000]);
+
+function func ([name, surname, ...work]){
+    console.log(name);
+    console.log(surname);
+    console.log(work);
+}
+*//*
+func(['Иван', 'Иванов', 'отдел разработки']);
+
+function func ([name, surname, department, position = "Джуниор"]){
+    console.log(name);
+    console.log(surname);
+    console.log(department);
+    console.log(position);
+}
+*//*
+func('отдел разработки', ['Иван', 'Иванов'], '2018-12-31');
+
+function func (department,[name, surname], year){
+    console.log(name);
+    console.log(surname);
+
+        let arr = String(year).split('-')   //просто выебываюсь
+        console.log(arr)                    //заодно стараюсь методы запоминать
+    console.log(arr[0]);                    //что бы не рыться в инете постоянно
+    console.log(arr[1]);
+    console.log(arr[2]);
+}
+*/
+                //Объекты в параметрах
+/*
+function func({year, month, day}) {
+	console.log(year);  // выведет 2025
+	console.log(month); // выведет 12
+	console.log(day);   // выведет 31
+}
+
+func({year: 2025, month: 12, day: 31,});
+*//*
+func({ color: 'red', width: 400, height: 500 });
+
+function func ({color, width, height}){
+    console.log(color);
+    console.log(width);
+    console.log(height);
+}
+*//*
+func({ color: "red", width: 400, height: 500 });
+
+function func ({color = "black", width, height}){
+    console.log(width);
+    console.log(height);
+    console.log(color);
+}
+*/
+                //Работа с объектом Date в JavaScript
+/*
+let date = new Date();
+
+console.log(date.getFullYear()); // год
+console.log(date.getMonth());    // месяц
+console.log(date.getDate());     // день
+
+console.log(date.getHours());    // часы
+console.log(date.getMinutes());  // минуты
+console.log(date.getSeconds());  // секунды
+*//*
+let date = new Date();
+console.log(date.getFullYear()); // год
+console.log(date.getMonth());    // месяц
+*/
+                //Форматирование даты в JavaScript
+/*
+function addZero(num) {         //добавляем 0 перед месяцем и числом
+	if (num >= 0 && num <= 9) {
+		return '0' + num;
+	} else {
+		return num;
+	}
+}
+
+let date = new Date();
+console.log(addZero(date.getFullYear()) + '-' + addZero(date.getMonth() + 1) + '-' + addZero(date.getDate()));
+*//*
+function addZero(num) {         //добавляем 0 перед месяцем и числом
+    if (num >= 0 && num <= 9) {
+        return '0' + num;
+    } else {
+        return num;
+    }
+}
+
+let date = new Date();
+console.log(addZero(date.getHours()) + ':' + addZero(date.getMinutes()) + ':' + addZero(date.getSeconds()) 
++ ' ' + addZero(date.getDate()) + '.' + addZero(date.getMonth() + 1) + '.' + addZero(date.getFullYear()));
+*/
+                    //Преобразование формата даты
+/*
+let str = '2025-12-31';
+let arr = str.split('-');
+console.log(arr); // получим массив ['2025', '12', '31']
+
+let str = '2025-12-31';
+let arr = str.split('-');
+let result = arr[2] + '/' + arr[1] + '/' + arr[0];
+
+console.log(result); // получим строку '31/12/2025'
+*/
+//Можно также использовать комбинацию методов split, reverse и join:
+/*
+let str = '2025-12-31';
+let result = str.split('-').reverse().join('/');
+
+console.log(result); // получим строку '31/12/2025'
+*//*
+let str = "2020-04-14";
+let arr = str.split("-").reverse().join("-");
+console.log(arr);
+*/
+                //Получения дня недели на JavaScript
+/*
+let date = new Date();
+console.log(date.getDay());
+*//*
+let date = new Date();
+console.log(6 - date.getDay());
+*/
+                //Вывод частей даты словом в JavaScript
+/*
+let date = new Date();
+let day  = date.getDay();
+let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+console.log(days[day]);  //cовместить day and days
+*//*
+let date = new Date();
+let month = date.getMonth();
+let months = [
+    'янв', 'фев', 'мар', 'апр', 'май', 'июн',
+    'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'
+];
+console.log(months[month]);
+*/
+                    //Установка времени в объекте Date в JavaScript
+/*
+let date = new Date(2025, 10, 5); // установим 5 ноября 2025 года
+let day  = date.getDay();
+let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+console.log(days[day]);
+*//*
+let date = new Date(2020, 3, 13); // месяц надо на 1 меньше чем нужный писать
+let day = date.getDay();
+let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+console.log(days[day]);
+*/
+                    //Работа с getTime
+/*
+let date = new Date();
+console.log(date.getTime());
+*//*
+let date = new Date(2015, 11, 4, 23, 59, 59);
+console.log(date.getTime());
+*//*
+let date = new Date(2025, 0);
+console.log(date.getTime());
+*/
+                    //Разница между датами
+/*
+let now  = new Date();
+let date = new Date(2015, 11, 4, 23, 59, 59);
+
+let diff = now.getTime() - date.getTime();
+console.log(diff);
+//в минуты
+console.log(diff / (1000 * 60));
+//в часы
+console.log(diff / (1000 * 60 * 60));
+*//*
+let date = new Date(1988, 2);
+let now = new Date(2000, 0);
+
+let diff = now.getTime() - date.getTime();
+console.log(diff);
+console.log(diff / (1000 * 60));  //минуты
+console.log(diff / (1000 * 60 * 60)); //часы
+console.log(diff / (1000 * 60 * 60 * 24)); //дни
+*//*
+let now = new Date(2020, 3);
+let date = new Date(1993, 10);
+
+let diff = now.getTime() - date.getTime();
+console.log(diff / (1000 * 60 * 60 * 24 * 30));
+*/
+                //Разница между объектами с датой в JavaScript
+/*
+let now  = new Date();
+let date = new Date(2015, 4, 25, 12, 59, 59);
+
+let diff = now - date; // вычитаем два объекта с датами друг от друга
+console.log(diff);     // увидим разницу в миллисекундах
+*//*
+let now = new Date(2000, 8, 1);
+let date = new Date(2010, 1, 15);
+
+let diff = date - now;
+console.log(diff / (1000 * 60 * 60 * 24 * 30 * 12)); 
+*/
+                //Автоматическая корректировка дат в JavaScript
+/*
+let date = new Date(2018, 0, 35);
+console.log(date); // получится 4 февраля
+*//*
+let date = new Date(2018, 12, 1); // указываем 12-тый месяц
+console.log(date); // получится 1 января 2019 года
+*//*
+let date = new Date(2018, 1, 35);
+console.log(date);
+*//*
+let date = new Date(2018, 15, 1);
+console.log(date);
+*//*
+let date = new Date(2018, 3, 31);
+console.log(date)
+*//*
+let date = new Date(2018, 1, 31);
+console.log(date)
+*//*
+let date = new Date(2018, 12, 33);
+console.log(date)
+*//*
+let date = new Date(2018, 33, 33);
+console.log(date);
+*/
+                //Нулевой день
+/*
+let date = new Date(2018, 1, 0); // указываем нулевой день
+console.log(date); // получится 31 января
+*//*
+let date = new Date(2018, 5, 0);
+console.log(date);
+*//*
+let date = new Date(2018, 0, 0);
+console.log(date);
+*/
+                //Отрицательные значения
+/*
+let date = new Date(2018, 1, -1); // указываем -1 день
+console.log(date); // получится 30 января
+*//*
+let date = new Date(2018, -1, 1); // указываем -1 месяц
+console.log(date); // получится 1 декабря 2017 года
+*//*
+let date = new Date(2018, 33, 33);
+console.log(date);
+*/
+                //Часы, минуты, секунды
+/*
+let date = new Date(2018, 0, 1, 24, 0, 0); // указываем 24-тый час
+console.log(date); // получится 2 января, 0 часов
+*//*
+let date = new Date(2018, 0, 1, 25, 0, 0); // указываем 25-тый час
+console.log(date); // получится 2 января, 1 час
+*//*
+let date = new Date(2018, 0, 1, 23, 0, 60);
+console.log(date);
+*//*
+let date = new Date(2018, 0, 1, 23, 60, 0);
+console.log(date);
+*//*
+let date = new Date(2018, 0, 1, 100, 100, 100);
+console.log(date);
+*/
+                //Нахождение последнего дня месяца в JavaScript
+/*
+let lastDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let month = 0; // январь - нулевой месяц
+
+console.log(lastDays[0]);
+*//*
+//в виде функции
+function getLastDay(month) {
+    let lastDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    return lastDays[month];
+}
+
+console.log(getLastDay(0)); // узнаем последний день января
+*//*
+function getLastDay(month, year) { // функция должна принимать и год
+    let lastDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    if (month != 1) {
+        return lastDays[month]; // если не февраль
+    } else {
+        //!!!!!!!!!!!
+    }
+}
+
+*/
+                //Простое решение задачи
+/*
+let date = new Date(2020, 3, 0);
+console.log(date.getDate());
+*//*
+function getLastDay(year, month){
+    let date = new Date(year, month);
+    return date
+}
+console.log(getLastDay(2020, 3))
+*//*
+function func(year, month) {
+    let date = new Date(year, month, 0);
+    return new Date(year, month, 0);
+}
+console.log(func(2020, 2))
+*//*
+let date = new Date(2020, 3, 0);
+let day = date.getDay();
+let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+console.log(days[day]);  //вт
+*//*
+function func (year, month){
+    let date = new Date(year, month, 0);    //без нолика робить не хочет
+    let day = date.getDay();
+    let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
+    return days[day]
+}
+console.log(func(2020, 3))
+*/
+                //Определение високосного года
+/*
+let date = new Date(2020, 2, 0);
+
+if (date.getDate() == 29) {
+	console.log('високосный');
+} else {
+	console.log('обычный');
+}
+*//*
+function isLeap (year){
+    let date = new Date(year)
+
+    if(year % 4 == 0){
+        return true
+    } else {
+        return false
+    }
+}
+console.log(isLeap(2020));
+*/
+                //Проверка корректности даты в JavaScript
+/*
+let year  = 2025;
+let month = 0;
+let day   = 32;
+
+let date = new Date(year, month, day);
+
+if (date.getFullYear() == year && date.getMonth() == month && date.getDate() == day) {
+	console.log('корректна');
+} else {
+	console.log('некорректна');
+}
+*//*
+function checkDate (year, month, day){
+    let date = new Date(year, month, day);
+
+        if (date.getFullYear() == year && date.getMonth() == month && date.getDate() == day) {
+            return true
+        } else {
+            return false
+        }
+}
+
+console.log(checkDate(2025, 0, 31)); // выведет true
+console.log(checkDate(2025, 0, 32)); // выведет false
+*/
+                //Получение моментов времени в JavaScript
+        //День текущего года
+/*
+let now  = new Date(); // получаем текущий момент
+let date = new Date(now.getFullYear(), 11, 31); // получаем нашу дату
+
+console.log(date.getDay());
+*/
+                //День текущего месяца
+/*
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), 5);
+console.log(date.getDay());
+*/
+                //День следующего или предыдущего года
+/*
+let now  = new Date();
+let date = new Date(now.getFullYear() + 1, 0, 21);
+console.log(date.getDay());
+*//*
+let now = new Date();
+let date = new Date(now.getFullYear() + 1, 11, 31);
+console.log(date.getDay());
+*//*
+let now = new Date();
+let date = new Date(now.getFullYear() + 1, now.getMonth(), 28);
+console.log(date.getDay());
+*//*
+let now = new Date();
+let date = new Date(now.getFullYear() - 1, now.getMonth(), 28);
+console.log(date.getDay());
+*/
+                //День следующего или предыдущего месяца
+/*
+let now = new Date();
+
+let date = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+console.log(date.getDay());
+*//*
+let now = new Date();
+
+let date = new Date(now.getFullYear(), now.getMonth(0) - 1, 1);
+console.log(date.getDay());
+*//*
+let now = new Date();
+
+let date = new Date(now.getFullYear(), now.getMonth() - 1, 28);
+console.log(date.getDay());
+*/
+                //Разность моментов
+/*
+let date1 = new Date();
+let date2 = new Date(2015, 4, 25, 12, 59, 59);
+
+console.log(date1 - date2); // разность в миллисекундах
+*//*
+let date1 = new Date(2020, 8, 1);
+let date2 = new Date(2020, 0, 1);
+
+console.log((date1 - date2) / (1000 * 60 * 60 * 24));
+*//*
+let now = new Date();
+let date1 = new Date(now.getFullYear(), now.getMonth(), 28);
+let date2 = new Date(now.getFullYear(), now.getMonth() + 7, 29);
+
+console.log((date2 - date1) / (1000 * 60 * 60 * 24))
+*/
+                //Момент времени дня
+/*
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12);
+console.log(date)
+*//*
+let now = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 12);
+console.log(date)
+*//*
+let now = new Date();
+let date1 = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1, 12);
+console.log((now - date1) / (1000 * 60 * 60));
+console.log(now);
+*/
+                //Начало дня
+/*
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+console.log(date);
+*//*
+let now = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate()); //можно не указывать часы, минуты и милисекунды
+console.log(date);
+*//*
+let now = new Date();
+console.log(now);
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+console.log(date);
+console.log((now - date) / (1000 * 60 * 60));
+*/
+                //Конец дня
+/*
+Давайте получим объект с датой, содержащий конец текущего дня:
+
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+Можно посчитать концом текущего дня полночь следующего (разница в 1 секунду):
+
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+Как вы уже знаете, нули в таком случае можно опустить:
+
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+Кстати, полночью также будет является время 24:00:00 текущего дня:
+
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 24, 0, 0);
+Опустим нули:
+
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 24);
+*//*
+let now = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 24);
+console.log((date - now) / (1000 * 60 * 60))
+*/
+                    //Циклическая проверка
+/*
+let now  = new Date();
+let year = now.getFullYear();
+
+for (let month = 0; month <= 11; month++) {
+	let date = new Date(year, month, 1);
+
+	if (date.getDay() == 0) {
+		console.log(year + '-' + month + '-1');
+	}
+}
+*//*
+let now = new Date();
+let year1 = now.getFullYear();
+let year2 = new Date(2000, 0, 1);
+//console.log(year2)
+for (let year2 = 0; year2 <= year1; year2 ++){
+    let date = new Date(year1, 0, 1);
+
+    if (date.getDay() == 6 || date.getDay() == 0){
+        console.log(year1 + '-' + '0' + '-1');
+    }
+}
+*/
+                //Практика на получение моментов времени в JavaScript
+/*
+let now = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+console.log((now - date) / 1000 * 60)
+*//*
+let now = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 24, 0, 0);
+console.log((date - now ) / 1000)
+*//*
+let now = new Date();
+let date = new Date(2021, 0, 0);
+console.log((date - now) / (1000 * 60 * 60 * 24));
+*//*
+let now = new Date();
+let year = now.getFullYear();
+for (let month = 0; month <= 11; month ++){
+    let date = new Date(year, month, 13);
+
+    if(date.getDay() == 5){
+        console.log(year + '-' + month + '-13')
+    }
+}
+*//*
+let now = new Date();
+let year = new Date(now.getFullYear(), now.getMonth() - 3, now.getDate());
+console.log(year);
+*//*
+let date = new Date(2020, 3, 30); // месяц надо на 1 меньше чем нужный писать
+let day = date.getDay();
+let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+console.log(days[day]);
+*//*
+let now = new Date();
+let date = new Date(2020, 4, 1);
+console.log((date - now) / (1000 * 60 * 60 * 24));
+*//*
+function isLeap(year) {
+    let date = new Date(year)
+
+    if (year % 4 == 0) {
+        return true
+    } else {
+        return false
+    }
+}
+console.log(isLeap(2020));
+console.log(isLeap(2019));
+console.log(isLeap(2021));
+*//*
+let now = new Date();
+let year = now.getFullYear();
+
+for (let year = 2020; year >= 1700; year--) {
+    //let date = new Date(year); //вроде и не нужно тут
+
+    if (year % 4 == 0) {
+        console.log(year);
+    }
+}
+*//*
+let now = new Date();
+let year = now.getFullYear();
+
+for (let year = 2020; year <= 2150; year++) {
+    //let date = new Date(year); //вроде и не нужно тут
+
+    if (year % 4 == 0) {
+        console.log(year);
+    }
+}
+*/
+                    //Строковое сравнение дат на JavaScript
+/*
+let date1 = '2020-11-31';
+let date2 = '2020-12-01';
+console.log(date1 > date2 );
+*/
+                    //Дата без года
+/*
+let date1 = '09-21';
+let date2 = '09-23';
+console.log(date1 > date2);
+*/
+                    //Попадание даты в промежуток
+/*
+let date = '20-08';
+
+if (date >= '01-01' && date <= '08-03') {
+	console.log('1 промежуток');
+}
+
+if (date >= '09-03' && date <= '17-06') {
+	console.log('2 промежуток');
+}
+
+if (date >= '18-06' && date <= '31-12') {
+	console.log('3 промежуток');
+}
+*//*
+let date = "12-01"
+
+if(date >= "22-12" && date <= "20-01"){
+    console.log("Kozerok");
+}
+
+if (date >= "21-01" && date <= "18-02") {
+    console.log("Vodolei");
+}
+
+if (date >= "19-02" && date <= "20-03") {
+    console.log("Fish");
+}
+
+if (date >= "21-03" && date <= "19-04") {
+    console.log("Oven");
+}
+
+if (date >= "20-04" && date <= "20-05") {
+    console.log("Teleц");
+}
+
+if (date >= "21-05" && date <= "21-06") {
+    console.log("Blizneцы");
+}
+
+if (date >= "22-06" && date <= "22-07") {
+    console.log("Lobster");
+}
+
+if (date >= "23-07" && date <= "22-08") {
+    console.log("Leo");
+}
+
+if (date >= "23-08" && date <= "22-09") {
+    console.log("Deva");
+}
+
+if (date >= "23-09" && date <= "23-10") {
+    console.log("Vecы");
+}
+
+if (date >= "24-10" && date <= "22-11") {
+    console.log("Scorpio");
+}
+
+if (date >= "23-11" && date <= "21-12") {
+    console.log("Streleц");
+}
+*/
+                    //Сравнение объектов с датами в JavaScript
+/*
+let now = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12);
+console.log(date > now);
+*//*
+let now = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), 15);
+if(now > date){
+    console.log("половина месяца прошла");
+} else {
+    console.log("половина месяцйа не прошла");
+}
+*/
+                    //Количество времени до ближайшей даты на JavaScript
+/*
+let now  = new Date();
+let date = new Date(now.getFullYear(), 2, 8); // текущий год
+
+let diff = date - now; // разница
+
+if (diff > 0) {
+	console.log("скоро")
+} else if (diff == 0) {
+	console.log("Сегодня")
+} else {
+	console.log("В след году, детка")
+}
+*//*
+let now = new Date();
+let date = new Date(now.getFullYear(), 2, 1);
+
+let diff = date - now;
+console.log(diff / (1000 * 60 * 60 * 24))
+
+if (diff > 0) {
+    console.log("скоро")
+} else if (diff == 0) {
+    console.log("Сегодня")
+} else {
+    console.log("В след году, детка")
+    let date = new Date(now.getFullYear()+ 1, 2, 1);
+    let diff1 = date - now;
+    console.log(" через " + diff1 / (1000 * 60 * 60 * 24))
+}
+*/
+                    //ОСНОВЫ РАБОТЫ С DOM !!!!!!!!!!!!
+                //метод querySelector специального объекта document
+/*
+let button = document.querySelector('#button');
+console.log(button);
+*//*
+let elem1 = document.querySelector("#elem1");
+console.log(elem1)
+
+let elem2 = document.querySelector("#elem2");
+console.log(elem2)
+
+let elem3 = document.querySelector("#elem3");
+console.log(elem3)\
+*/  
+                    //Более сложные селекторы
+/*
+let elem = document.querySelector('#parent input');
+console.log(elem);
+*//*
+let elem = document.querySelector("#block p");
+console.log(elem);
+*//*
+let elem = document.querySelector(".block p");
+console.log(elem);
+*//*
+let elem = document.querySelector(".www");
+console.log(elem);
+*/
+                    //Привязывание обработчиков событий к элементам
+/*
+let button = document.querySelector('#button');
+button.addEventListener('click', function () {
+    alert('!!!');
+});
+*//*
+let button1 = document.querySelector('#button1');
+button1.addEventListener('click', function () {
+    alert('1');
+});
+
+let button2 = document.querySelector('#button2');
+button2.addEventListener('click', function () {
+    alert('2');
+});
+
+let button3 = document.querySelector('#button3');
+button3.addEventListener('click', function () {
+    alert('3');
+});
+*/
+                    //Другие типы событий в JavaScript
+/*
+let button = document.querySelector("#button");
+button.addEventListener("dblclick", function (){
+    alert("fyx");
+});
+
+let button1 = document.querySelector("#button1");
+button1.addEventListener("mouseover", function () {
+    alert("fyx1");
+});
+
+let button2 = document.querySelector("#button2");
+button2.addEventListener("mouseout", function () {
+    alert("fyx2");
+});
+
+let button3 = document.querySelector("#button3");
+button3.addEventListener("click", function () {
+    alert("fyx3");
+});
+button3.addEventListener("dblclick", function () {
+    alert("fyx3");
+});
+*/
+                    //Именованные обработчики событий в JavaScript
+/*
+let button = document.querySelector('#button');
+button.addEventListener('click', func);
+
+function func() {
+    alert('!!!');
+}
+*//*
+let button1 = document.querySelector("#button1");
+button1.addEventListener("click", func1);
+function func1() {
+    alert(1);
+}
+
+let button2 = document.querySelector("#button2");
+button2.addEventListener("click", func2);
+function func2(){
+    alert(2);
+}
+*/
+                //Привязывание одного обработчика ко многим элементам
+/*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let elem3 = document.querySelector("#elem3");
+let elem4 = document.querySelector("#elem4");
+let elem5 = document.querySelector("#elem5");
+
+elem1.addEventListener("click", func);
+elem2.addEventListener("click", func);
+elem3.addEventListener("click", func);
+elem4.addEventListener("click", func);
+elem5.addEventListener("click", func);
+
+function func() {
+    alert('message');
+}
+*/
+                    //Несколько обработчиков одного события в JavaScript
+/*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("click", func1);
+elem.addEventListener("click", func2);
+elem.addEventListener("click", func3);
+function func1() {
+    alert('1');
+}
+
+function func2() {
+    alert('2');
+}
+
+function func3() {
+    alert('3');
+}
+*/
+                    //Анонимные обработчики
+/*
+button.addEventListener('click', function () {
+    alert('2');
+});
+*//*
+let button = document.querySelector("#button");
+
+button.addEventListener("dblclick", function(){
+    alert("1")
+});
+
+button.addEventListener("dblclick", function () {
+    alert("2")
+});
+
+button.addEventListener("dblclick", function () {
+    alert("3")
+});
+*/
+                    //Работа с текстом тега на JavaScript
+                //elem.innerHTML
+/*
+let button = document.querySelector('#button');
+let elem = document.querySelector('#elem');
+
+button.addEventListener('click', function () {
+    alert(elem.innerHTML);
+});
+*//*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    alert(Number(elem1.innerHTML) + Number(elem2.innerHTML));
+});
+*//*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+
+button1.addEventListener("click", function () {
+    alert(elem1.innerHTML);
+});
+
+button2.addEventListener("click", function () {
+    alert(elem2.innerHTML);
+});
+*/
+                    //Запись
+/*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+
+button1.addEventListener("click", function(){
+    elem1.innerHTML = "Hello";
+});
+
+button2.addEventListener("click", function () {
+    elem2.innerHTML = "Good bay";
+});
+*//*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let elem3 = document.querySelector("#elem3");
+
+elem1.addEventListener("click", function(){
+    elem1.innerHTML = 1;
+});
+
+elem2.addEventListener("click", function () {
+    elem2.innerHTML = 2;
+});
+
+elem3.addEventListener("click", function () {
+    elem3.innerHTML = 3;
+});
+*//*
+let button = document.querySelector('#button');
+let elem = document.querySelector('#elem');
+
+button.addEventListener('click', function () {
+    elem.innerHTML = Number(elem.innerHTML) ** 2;
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    elem.innerHTML = Number(elem.innerHTML) + Number(1);
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+    elem.innerHTML = "!" + elem.innerHTML + "!";
+});
+*/
+                    //Запись тегов
+/*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+    elem.innerHTML = "<i>Hello</i>";
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+    elem.innerHTML = "<b>" + elem.innerHTML + "</b>";
+});
+*/
+                    //Работа с атрибутами тегов через свойства элементов
+/*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    alert(elem.type);
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+    elem.type = "submit"
+    alert(elem.type);
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+let link = document.querySelector("#link");
+
+button.addEventListener("click", function(){
+    elem.innerHTML = link.href
+});
+*//*
+let button = document.querySelector("#button");
+let link = document.querySelector("#link");
+
+button.addEventListener("click", function(){
+    link.innerHTML = link.innerHTML + '('+ link.href + ')';
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+let image = document.querySelector("#image");
+
+button.addEventListener("click", function(){
+    elem.innerHTML = image.src;
+});
+*//*
+let button = document.querySelector("#button");
+let image = document.querySelector("#image");
+
+//button.addEventListener("click", function(){
+//    image.width = "300";
+//});
+button.addEventListener("click", function(){
+    image.width = image.width*2;
+});
+*//*
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+let image1 = document.querySelector("#image1");
+let image2 = document.querySelector("#image2");
+
+button1.addEventListener("click", function(){
+    image1.src = 'img/111.jpg'
+});
+
+button2.addEventListener("click", function () {
+    image2.src = 'img/222.jpg'
+});
+*/
+                    //Работа с текстовыми полями в JavaScript
+/*
+alert(elem.value);
+elem.value = 'new text';
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    alert(elem.value);
+    elem.value = "hello";
+    alert(elem.value);
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+    elem.value = "tib lox";
+});
+*//*
+let elem = document.querySelector("#elem");
+let elem1 = document.querySelector("#elem1");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    elem1.innerHTML = elem.value;
+});
+*//*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    elem2.value = elem1.value ** 2
+});
+*//*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    buff = elem1.value;
+    elem1.value = elem2.value
+    elem2.value = buff;
+});
+*//*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let elem3 = document.querySelector("#elem3");
+let elem4 = document.querySelector("#elem4");
+let elem5 = document.querySelector("#elem5");
+let elem6 = document.querySelector("#elem6");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    //let sum = Number(elem1) + Number(elem2) + Number(elem3) + Number(elem4) + Number(elem5);
+   
+    elem6.innerHTML = (Number(elem1.value) + Number(elem2.value) + Number(elem3.value) + Number(elem4.value) + Number(elem5.value)) / 5
+    
+});
+*/
+                    //Фокус текстовых полей в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('focus', function () {
+    console.log(elem.value);
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener("focus", function(){
+    elem.value = "1";
+});
+elem.addEventListener("blur", function () {
+    elem.value = "2";
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener("blur", function(){
+    elem.value = elem.value ** 2;
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener("focus", function () {
+    elem.value = "";
+});
+*/
+                //Исключения при работе с атрибутами в JavaScript
+        //Существуют и другие исключения, например, атрибут for. К нему следует обращаться через htmlFor.
+/*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    alert(elem.className);
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    elem.className = "fffff";
+    console.log(elem.className);
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    let arr = [];
+    arr.push(elem.className);
+    console.log(arr);
+    //console.log(elem.className);
+});
+*/
+                //Цепочки методов и свойств в JavaScript
+/*
+//alert( document.querySelector('#elem').value ); // выведет 'text'
+alert(document.querySelector('#elem').value = 'www');
+*//*
+//let image = document.querySelector('#image');
+//console.log(image.src);
+console.log(document.querySelector("#image").src);
+*/
+                //Преимущества и недостатки цепочек
+/*
+console.log(document.querySelector('#image').src);
+console.log(document.querySelector('#image').width);
+console.log(document.querySelector('#image').height);
+
+let image = document.querySelector("#image");
+
+image.addEventListener("click", function(){
+    alert(image.src = "www");
+    alert(image.width = "1000");
+    alert(image.height = "2000");
+});
+*/
+                //Объект this в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('blur', func);
+function func() {
+    console.log(this); // содержит ссылку на наш элемент
+}
+function func() {
+    console.log(this.value); // выведем содержимое атрибута
+}
+function func() {
+    this.value = '!!!';
+}
+
+elem.addEventListener('blur', function () {
+    this.value = '!!!';
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('focus', function () {
+    this.value = '1';
+});
+
+elem.addEventListener('blur', function () {
+    this.value = '2';
+});
+*//*
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    this.value = Number(this.value) + 1;
+});
+*/
+                //Особое преимущество this
+/*
+let button1 = document.querySelector('#button1');
+let button2 = document.querySelector('#button2');
+let button3 = document.querySelector('#button3');
+
+button1.addEventListener('click', func);
+button2.addEventListener('click', func);
+button3.addEventListener('click', func);
+
+function func() {
+    console.log(this.value);
+}
+*//*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let elem3 = document.querySelector("#elem3");
+let elem4 = document.querySelector("#elem4");
+let elem5 = document.querySelector("#elem5");
+
+elem1.addEventListener("click", func);
+elem2.addEventListener("click", func);
+elem3.addEventListener("click", func);
+elem4.addEventListener("click", func);
+elem5.addEventListener("click", func);
+
+function func(){
+    this.innerHTML +="!";
+}
+*//*
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+let button3 = document.querySelector("#button3");
+
+button1.addEventListener("blur", func);
+button2.addEventListener("blur", func);
+button3.addEventListener("blur", func);
+
+function func(){
+    this.value  **= 2;
+}
+*/
+                //Получение группы элементов
+/*
+let elems = document.querySelectorAll('.www');
+
+for (let elem of elems) {
+	console.log(elem.innerHTML);
+}
+*//*
+let elems = document.querySelectorAll('.www');
+
+for (let elem of elems) {
+    elem.innerHTML = elem.innerHTML + '!';
+}
+*//*
+let elems = document.querySelectorAll(".www");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    for (let elem of elems){
+        elem.innerHTML = "text";
+    }
+});
+*//*
+let elems = document.querySelectorAll(".www");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+   let i = 1;
+    for (let elem of elems){
+        elem.innerHTML = elem.innerHTML + i;
+        i++;
+    }
+});
+*//*
+let elems = document.querySelectorAll("#elem");
+let paragraf = document.querySelector("#www");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    let sum = 0;
+    for (let elem of elems){
+        sum += Number(elem.value);
+        //console.log(sum);
+    }
+    paragraf.innerHTML = sum;
+});
+*/
+                    //Добавление обработчиков событий в цикле
+/*
+function func() {
+    alert('!');
+}
+*//*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+    elem.addEventListener('click', func);
+}
+
+function func() {
+    alert(this.innerHTML); // выводим текст абзаца
+}
+*//*
+let elems = document.querySelectorAll('input');
+for (let elem of elems){
+    elem.addEventListener("blur", func);
+}
+
+function func() {
+    this.value = Number(this.value) + 1;
+}
+*//*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems){
+    elem.addEventListener("click", func);
+}
+
+function func(){
+    this.innerHTML = this.innerHTML ** 2;
+}
+*/
+                //Анонимные функции как обработчики событий
+/*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+    elem.addEventListener('click', function () {
+        alert(this.innerHTML);
+    });
+}
+*//*
+let divs = document.querySelectorAll('div');
+
+for (let div of divs) {
+    div.addEventListener('click', func);
+}
+
+function func() {
+    this.innerHTML++;
+}
+*//*
+let divs = document.querySelectorAll("div");
+
+for (let div of divs){
+    div.addEventListener("click", function(){
+        this.innerHTML++;
+    })
+}
+*/
+                    //Отвязывание событий через removeEventListener
+/*
+let button = document.querySelector('#button');
+button.addEventListener('click', func);
+    //привязали
+function func() {
+    alert('!!!');
+}
+
+//let button = document.querySelector('#button');
+//button.addEventListener('click', func);
+    //отвязали
+function func() {
+    alert('!!!');
+    this.removeEventListener('click', func);
+}
+*//*
+let a = document.querySelector('a');
+a.addEventListener('click', func);
+
+function func() {
+    this.innerHTML += '(' + a.href + ')';
+    this.removeEventListener('click', func)
+}
+*//*
+let input = document.querySelector("input");
+
+input.addEventListener("click", func);
+
+function func(){
+    this.value < 10 ? this.value++ : this.removeEventListener('click', func);  
+}
+*/
+
+
+
+
