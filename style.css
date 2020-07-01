@@ -1,0 +1,114 @@
+/*.colored {
+	color: red;
+}
+
+.decoration {
+	text-decoration: line-through;
+}
+
+.fonts {
+	font-weight: bold;
+}
+
+#elem {
+	display: none;
+	width: 200px;
+	height: 200px;
+	border: 1px solid green;
+}
+
+#elem.active {
+	display: block;
+}
+*/
+
+
+/*Элемент события в объекте Event в JavaScript*/
+/*
+ul {
+	padding: 30px;
+	border: 1px solid red;
+}
+
+li {
+	list-style-type: none;
+	margin-bottom: 20px;
+	border: 1px dashed black;
+}
+*/
+/*Добавление рядов и колонок в HTML таблицу*/
+/*
+td {
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+}
+*//*
+.aaa {
+	text-decoration: line-through;
+}
+
+.bbb {
+	background-color: green;
+}
+*/
+				/*Кнопки для скрытия и показа элемента на JavaScript*/
+/*
+.hidden {
+	display: none;
+}
+*/
+				/*Активация элементов на JavaScript*/
+/*
+.active {
+	background: red;
+}
+*/
+				/*Чередование стилей активации на JavaScript*/
+/*
+.color1 {
+	background: red;
+}
+
+
+.color2 {
+	background: green;
+}
+*/
+				/*Чередование многих цветов из массива*/
+/*
+.color1 {
+	background: red;
+}
+
+.color2 {
+	background: green;
+}
+
+.color3 {
+	background: yellow;
+}
+*/
+		/*Поиск ячеек таблицы с помощью атрибута data*/
+/*
+td {
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+}
+
+.aaa{
+	background-color: red;
+}
+*/
+		/*Функция для создания HTML таблиц на JavaScript */
+
+td {
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+}
+
+.color3 {
+	background: yellow;
+}
