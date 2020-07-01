@@ -4,11 +4,1688 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/style.css">
+	
 	<title>JavaScript</title>
 </head>
 <body>
-	<h1>Моя первая программа</h1>
+	<!--ВВЕДЕНИЕ В DOM-->
+	<!--
+	<input id="button" type="submit">
+
+	<p id="elem1">1</p>
+	<p id="elem2">2</p>
+	<p id="elem3">3</p>
+
+	<div id="parent">
+		<input value="1">
+		<input value="2">
+	</div>
+
+	<div id="block">
+		<p>1</p>
+		<p>2</p>
+	</div>
+
+	<div class="block">
+		<p>1</p>
+		<p>2</p>
+	</div>
+
+	<p class="www">text</p>
+	<p class="www">text</p>
+													-->
+	<!--Привязывание обработчиков событий к элементам-->
+	<!--<input id="button" type="submit"> -->
+	<!--
+	<input id="button1" type="submit">
+	<input id="button2" type="submit">
+	<input id="button3" type="submit">
+																	-->
+	<!--Другие типы событий в JavaScript-->
+		<!--
+		<input id="button" type="submit">
+		<input id="button1" type="submit">
+		<input id="button2" type="submit">
+
+		<input id="button3" type="submit">
+																-->
+		
+		<!--Именованные обработчики событий в JavaScript-->
+
+		<!--<input id="button" type="submit">-->
+		<!--
+		<input id="button1" type="submit" value="button1">
+		<input id="button2" type="submit" value="button2">
+																									-->
+				
+		<!--Привязывание одного обработчика ко многим элементам-->
+    <!--
+		<p id="elem1">text</p>
+		<p id="elem2">text</p>
+		<p id="elem3">text</p>
+		<p id="elem4">text</p>
+		<p id="elem5">text</p>
+												-->
+
+		<!--Несколько обработчиков одного события в JavaScript-->
+		<!--
+		<p id="elem">text</p>
+		<input id="button" type="submit" value="button">
+		-->
+
+		<!--Работа с текстом тега на JavaScript-->
+		<!--
+		<p id="elem">text</p>
+		<input id="button" type="submit">
+			-->
+			<!--
+		<p id = "elem1">1</p>	
+		<p id = "elem2">2</p>
+		<input type="submit" id = "button">	
+			-->
+			<!--
+			<p id="elem1">1</p>
+			<p id="elem2">2</p>
+			<input type="submit" id="button1">
+			<input type="submit" id="button2">
+			-->
+						<!--Запись-->
+			<!--
+			<p id="elem1"></p>	
+			<p id="elem2"></p>
+			<input type="submit" id="button1">
+			<input type="submit" id="button2">
+		--><!--
+			<p id="elem1">0</p>
+			<p id="elem2">0</p>
+			<p id="elem3">0</p>
+		--><!--
+			<p id = "elem">2</p>
+			<input type="submit" id="button">
+		--><!--
+			<p id="elem">2</p>
+			<input type="submit" id="button">
+		--><!--
+		<p id="elem">это пиздец</p>
+		<input type="submit" id="button">
+		-->
+					<!--Запись тегов-->
+		<!--
+		<p id="elem"></p>
+		<input type="submit" id="button">
+		-->
+		<!--
+		<p id="elem">sfsfdsdfs</p>
+		<input type="submit" id="button">
+		-->
+		<!--Работа с атрибутами тегов через свойства элементов-->
+		<!--
+		<input id="elem" type="email">
+		<input id="button" type="submit">
+			--><!--
+			<a href="www.sdfsf/ru" id ="link">aaa</a>
+			<input type="submit" id="button">
+			<p id = "elem">bbb</p>
+				--><!--
+			<a href="www.sdfsf/ru" id="link">aaa</a>
+			<input type="submit" id="button">
+				--><!--
+			<img src="img/111.jpg" alt="" width="250px" height="250px" id = "image">
+			<input type="submit" id="button">
+			<p id="elem"></p>
+				--><!--
+			<img src="img/111.jpg" alt="" width="20px" height="250px" id="image">
+			<input type="submit" id="button">
+				--><!--
+			<img src="" alt="" width="250px" height="250px" id="image1">
+			<img src="" alt="" width="250px" height="250px" id="image2">
+			<input type="submit" id="button1">
+			<input type="submit" id="button2">
+				-->
+			
+			<!--Работа с текстовыми полями в JavaScript-->
+
+			<!--<input id="elem" value="text">-->
+			<!--
+			<input id="elem" value="text">
+			<input type="submit" id="button">
+				--><!--
+			<input id="elem" value="text">
+			<p id="elem1">1</p>
+			<input type="submit" id="button">
+			--><!--
+			<input id="elem1" value="text1">
+			<input id="elem2" value="text2">
+			<input type="submit" id="button">
+				--><!--
+			<input id="elem1" value="text1">
+			<input id="elem2" value="text2">
+			<input id="elem3" value="text3">
+			<input id="elem4" value="text4">
+			<input id="elem5" value="text5">
+			<p id="elem6"></p>
+			<input type="submit" id="button">
+				-->
+
+				<!--Фокус текстовых полей в JavaScript-->
+				<!--
+				<input id="elem" value="text">
+				-->
+
+				<!--Исключения при работе с атрибутами в JavaScript-->
+				<!--
+			<div id="elem" class="content no-gap"></div>
+			<input type="submit" id="button">
+				--><!--
+			<div id="elem"></div>
+			<input type="submit" id="button">
+				--><!--
+			<div id="elem" class="aaa bbb ccc"></div>
+			<input type="submit" id="button">
+			-->
+
+			<!--Цепочки методов и свойств в JavaScript-->
+
+			<!--<input id="elem" value="text">-->
+			<!--<img id="image" src="avatar.png">-->
+
+			<!--Преимущества и недостатки цепочек-->
+			<!--<img id="image" src="avatar.png" width="300" height="500">-->
+
+			<!--Объект this в JavaScript-->
+			<!--<input id="elem" value="text">-->
+			<!--<input type="submit" id="button" value="1">-->
+
+			<!--Особое преимущество this-->
+			<!--
+			<input id="button1" type="submit" value="text1">
+			<input id="button2" type="submit" value="text2">
+			<input id="button3" type="submit" value="text3">
+				--><!--
+			<p id="elem1">1</p>
+			<p id="elem2">2</p>
+			<p id="elem3">3</p>
+			<p id="elem4">4</p>
+			<p id="elem5">5</p>
+				--><!--
+			<input id="button1" type="submit" value="2">
+			<input id="button2" type="submit" value="3">
+			<input id="button3" type="submit" value="4">
+				-->
+
+			<!--Получение группы элементов-->
+			<!--
+			<p class="www">text1</p>
+			<p class="www">text2</p>
+			<p class="www">text3</p>
+				--><!--
+			<p class="www">text1</p>
+			<p class="www">text2</p>
+			<p class="www">text3</p>
+			<input id="button" type="submit">
+			--><!--
+			<p class="www">text1</p>
+			<p class="www">text2</p>
+			<p class="www">text3</p>
+			<input id="button" type="submit">
+			--><!--
+			<input id="elem" value="1">
+			<input id="elem" value="3">
+			<input id="elem" value="2">
+			<input id="elem" value="4">
+			<p id="www">text3</p>
+			<input id="button" type="submit">
+			-->
+
+			<!--Добавление обработчиков событий в цикле-->
+			<!--
+			<p>text1</p>
+			<p>text2</p>
+			<p>text3</p>
+			-->
+			<!--
+			<input id="elem" value="1">
+			<input id="elem" value="3">
+			<input id="elem" value="2">
+			<input id="elem" value="4">
+			--><!--
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			-->
+
+			<!--Анонимные функции как обработчики событий-->
+			<!--
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			-->
+
+			<!--Отвязывание событий через removeEventListener-->
+			<!--
+			<input id="button" type="submit">
+			--><!--
+			<a href="http://127.0.0.1:5500/Start_JavaScript/src/index.html" id="link">a</a>
+			--><!--
+			<input type="button" value="1">
+			-->
+
+			<!--Отвязывание обработчиков событий в цикле-->
+			<!--
+			<p>text1</p>
+			<p>text2</p>
+			<p>text3</p>
+			-->
+
+			<!--Отвязывание анонимных функций в JavaScript-->
+			<!--
+			<p>text1</p>
+			<p>text2</p>
+			<p>text3</p>
+			-->
+
+			<!--Работа с атрибутами через методы в JavaScript-->
+
+			<!--Метод getAttribute-->
+			<!--<input id="elem" value="abcde">-->
+			<!--<input id="elem" value="text">-->
+			<!--<input id="elem" class="www zzz">-->
+
+			<!--Метод setAttribute-->
+			<!--<input id="elem" value="abcde">-->
+			<!--<input id="elem">-->
+
+			<!--Метод removeAttribute-->
+			<!--<input id="elem" value="abcde">-->
+			<!--<input id="elem" value="text">-->
+
+			<!--Метод hasAttribute-->
+			<!--<input id="elem" value="abcde">-->
+			<!--<input id="elem" value="text">-->
+
+			<!--Разница между способами получения атрибутов-->
+			<!--<input id="elem" value="old">-->
+			<!--<input id="elem" value="old">-->
+			<!--<input id="button" type="submit">-->
+
+			<!--Изменение атрибута-->
+			<!--<input id="elem" value="old">-->
+			<!--<input id="button" type="submit">-->
+
+			<!--Манипулирование CSS классами в JavaScript-->
+			<!--<p id="elem" class="www ggg zzz"></p>-->
+			<!--<p id="elem" class="www ggg zzz"></p>-->
+
+			<!--Метод add объекта classList-->
+			<!--<p id="elem" class="www ggg zzz"></p>-->
+			<!--<p id="elem" class="www ggg zzz"></p>-->
+
+			<!--Метод remove объекта classList-->
+			<!--<p id="elem" class="www ggg zzz"></p>-->
+			<!--<p id="elem" class="www ggg zzz"></p>-->
+
+			<!--Метод contains объекта classList-->
+			<!--<p id="elem" class="www ggg zzz"></p>-->
+			<!--<p id="elem" class="www ggg zzz"></p>-->
+
+			<!--Метод toggle объекта classList-->
+			<!--<p id="elem" class="www ggg zzz"></p>-->
+			<!--<p id="elem" class="www ggg"></p>-->
+			<!--<p id="elem" class="zzz ggg"></p>-->
+
+			<!--Стилизация элементов через атрибут style в JavaScript-->
+			<!--<p id="elem">text</p>-->
+			<!--<div id="elem">p</div>
+			<input id="button" type="submit">-->
+
+			<!--Свойства с дефисом-->
+			<!--<div id="elem">psdfsfdfnsdkfb jkhsbskfbnskjfga ahdjhab </div>
+			<input id="button" type="submit">-->
+
+			<!--Исключение-->
+			<!--<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<input id="button" type="submit">-->
+
+			<!--Стилизация с помощью CSS классов на JavaScript-->
+
+			<!--<p>text1</p>
+			<p>text2</p>
+			<p>text3</p>-->
+			<!--<p id="elem">text</p>
+			<input id="button1" type="submit" value="перечеркнуть">
+			<input id="button2" type="submit" value="сделать жирным">
+			<input id="button3" type="submit" value="сделать красным">-->
+
+			<!--Дополнительное преимущество-->
+			<!--<p>text</p>-->
+
+			<!--Применение-->
+			<!--<button id="button">click me</button>
+			<div id="elem"></div>-->
+
+			<!--Отработка изученного материала на работу с DOM-->
+			<!--<input id="button" value="text">
+			<p id="elem"></p>-->
+
+			<!--<input id="button1" value="1">
+			<input id="button2" value="2">
+			<input id="button3" value="3">
+			<p id="elem"></p>
+			<button id="button">click me</button>-->
+			
+			<!--<input id="button" value="">-->
+
+			<!--<input id="button" value="">-->
+
+			<!--<p><input id="fullname" type="text" name="" value=""></p>
+			<p><input id="surname" type="text" name="" value=""></p>
+			<p><input id="patronymic" type="text" name="" value=""></p>
+			<p><input id="name" type="text" name="" value=""></p>-->
+
+			<!--<input id="fullname" type="text" name="" value="">-->
+
+			<!--<input id="button" type="text" value="">-->
+
+			<!--<input id="button" type="text" value="">-->
+
+			<!--<input id="button1" type="text" value="">
+			<button id="button2">click me</button>-->
+
+			<!--<input id="button" type="text" value="">-->
+
+			<!--<p>text1</p>
+			<p>text2</p>
+			<p>text3</p>
+			<button id="button">click me</button>-->
+
+			<!--<a href="sfdsfdaw">a</a>
+			<a href="sdfsdwef">b</a>
+			<a href="sdfswwedf">c</a>-->
+
+			<!--<a class="aaa" href="http://">ссылка</a>
+			<a class="aaa" href="http://">ссылка</a>
+			<a class="aaa" href="http://">ссылка</a>-->
+
+			<!--<p>2</p>
+			<p>4</p>
+			<p>6</p>-->
+
+			<!--<input id="button" type="text" value="">-->
+
+			<!--<input id="button" type="text" value="">-->
+
+			<!--<input id="button1" type="text" value="">
+			<button id="button2">+1</button>
+			<button id="button3">-1</button>-->
+
+			<!--<input id="button" type="text" value="">
+			<p>2</p>
+			<p>4</p>
+			<p>6</p>-->
+
+			<!--<input id="button" type="text" value="">
+			<button id="button1">Страна</button>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul> -->
+
+			<!--<input id="button" type="text" value="">
+			<button id="button1">Страна</button>
+			<p></p>-->
+
+			<!--<div>sfds fsfsfm nwehr  nwerhihw snssdf,g pj bfsb ywgu b bnfiryw bhgsweuyir</div>
+			<div>sf jsojw wr oj</div>
+			<div>njfsdfhsfnsfsno</div>-->
+			
+			<!--<p></p>-->
+
+			<!--<input id="button" type="text" value="">-->
+
+			<!--<input id="button" type="text" value="">
+			<button id="button1">Страна</button>-->
+
+			<!--<input id="button" type="text" value="">
+			<button id="button1">Страна</button>-->
+
+			<!--Нахождение элементов по родственным связям-->
+
+			<!--<div id="parent">
+				<p>1</p>
+				<p>2</p>
+				<p>3</p>
+				<p>4</p>
+				<p>5</p>
+			</div>-->
+
+			<!--<ul id="elem">
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+			</ul>-->
+
+			<!--Свойство parentElement-->
+
+			<!--<div id="parent">
+				<p id="elem"></p>
+			</div>-->
+
+			<!--<div>
+				<ul>
+					<li>text</li>
+					<li>text</li>
+					<li id="elem">text</li>
+					<li>text</li>
+					<li>text</li>
+				</ul>
+			</div>-->
+
+			<!--Поиск всех родителей-->
+
+			<!--<div class="www" id="parent2">
+				<div class="ggg" id="parent1">
+					<p class="zzz" id="child"></p>
+				</div>
+			</div>-->
+
+			<!--<header>
+				<div>
+					<p>
+						<span id="elem"></span>
+					</p>
+				</div>
+			</header>-->
+
+			<!--<header>
+				<div class="www">
+					<p class="www">
+						<span id="elem"></span>
+					</p>
+				</div>
+			</header>-->
+
+			<!--Поиск соседей-->
+
+			<!--<p>sibling</p>
+			<p id="elem">elem</p>-->
+
+			<!--<ul>
+				<li>text</li>
+				<li>text</li>
+				<li id="elem">text</li>
+				<li>text</li>
+				<li>text</li>
+			</ul>-->
+
+			<!--Другие полезные методы для поиска элементов-->
+			<!--Метод getElementById-->
+
+			<!--<input id="elem" value="???">-->
+			<!--<div id="elem"></div>-->
+
+			<!--Метод getElementsByTagName-->
+
+			<!--<p>elem 1</p>
+			<p>elem 2</p>
+			<p>elem 3</p>-->
+
+			<!--<ul>
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+			</ul>-->
+
+			<!--Метод getElementsByClassName-->
+
+			<!--<p class="www">elem 1</p>
+			<p class="www">elem 2</p>
+			<p class="www">elem 3</p>-->
+
+			<!--<p class="www">elem 1</p>
+			<p class="www">elem 2</p>
+			<p class="www">elem 3</p>-->
+
+			<!--Поиск элементов внутри другого элемента-->
+
+			<!--<div id="parent">
+				<div class="child">text</p>
+				<div class="child">text</p>
+				<div class="child">text</p>
+			</div>-->
+
+			<!--<div id="parent">
+				<p class="www">text</p>
+				<p class="www">text</p>
+				<p class="www">text</p>
+				<p class="ggg">text</p>
+				<p class="ggg">text</p>
+				<p class="ggg">text</p>
+			</div>-->
+
+			<!--Работа с текстареа в JavaScript-->
+
+			<!--<textarea id="elem">text</textarea>-->
+
+			<!--<textarea id="elem">text</textarea>
+			<p id="elem1"></p>-->
+
+			<!--Атрибут disabled в JavaScript-->
+
+			<!--<input id="elem" disabled>-->
+
+			<!--<input id="elem">
+			<button id="button1">Click1</button>
+			<button id="button2">Click2</button>-->
+			
+			<!--<input id="elem" disabled>
+			<button id="button" >Click</button>-->
+
+			<!--Работа с чекбоксами в JavaScript-->
+
+			<!--<input type="checkbox" checked  id="elem">-->
+
+			<!--<input type="checkbox" checked id="elem">
+			<button id="button1">Click1</button>
+			<button id="button2">Click2</button>-->
+
+			<!--<input type="checkbox"  id="elem">
+			<button id="button">Click</button>
+			<p id="paragraph">qqq</p>-->
+
+			<!--Чередование атрибутов без значений-->
+
+			<!--<input id="elem" disabled>
+			<input id="button" type="submit">-->
+
+			<!--<input type="checkbox" checked id="elem">
+			<button id="button">Click</button>-->
+
+			<!--Работа с радиокнопками в JavaScript-->
+
+			<!--<input type="radio" name="elem" value="1" checked>
+			<input type="radio" name="elem" value="2">
+			<input type="radio" name="elem" value="3">
+			<input type="submit" id="button">-->
+
+			<!--<input type="radio" name="elem" value="1" >
+			<input type="radio" name="elem" value="2" checked>
+			<input type="radio" name="elem" value="3">
+			<input type="submit" id="button">
+			<p id="paragraph">qqq</p>-->
+
+			<!--Событие change в JavaScript-->
+
+			<!--<input id="elem" value="text">-->
+
+			<!--<input id="elem" value="text">
+			<p id="paragraph">qqq</p>-->
+
+			<!--<input type="checkbox"  id="elem">-->
+
+			<!--<input id="elem" value="text">-->
+
+
+			<!--Событие input в JavaScript-->
+
+			<!--<input id="elem">-->
+
+			<!--<input id="elem">
+			<p id="paragraph"></p>-->
+
+
+			<!--Методы focus и blur в JavaScript-->
+
+			<!--<input id="elem" value="text">
+			<input type="submit" id="button">-->
+
+			<!--<input id="elem1" value="">
+			<input id="elem2" value="">-->
+
+
+			<!--Работа с выпадающими списками в JavaScript-->
+
+			<!--<select id="select">
+				<option>one</option>
+				<option selected>two</option>
+				<option>three</option>
+			</select>-->
+
+			<!--<select id="select">
+				<option>one</option>
+				<option selected>two</option>
+				<option>three</option>
+			</select>
+			<input type="submit" id="button">
+			<p id="paragraph">ggg</p>-->
+
+			<!--<select id="select">
+				<option>2020</option>
+				<option>2021</option>
+				<option>2022</option>
+				<option>2023</option>
+				<option>2024</option>
+				<option>2025</option>
+				<option>2026</option>
+				<option>2027</option>
+				<option>2028</option>
+				<option>2029</option>
+				<option>2030</option>
+			</select>-->
+
+			<!--Атрибут value-->
+
+			<!--<select id="select">
+				<option value="1">one</option>
+				<option value="2" selected>two</option>
+				<option value="3">three</option>
+			</select>-->
+
+			<!--<select  id="select">
+				<option value="1">понедельник</option>
+				<option value="2">вторник</option>
+				<option value="3">среда</option>
+				<option value="4">четверг</option>
+				<option value="5">пятница</option>
+				<option value="6">суббота</option>
+				<option value="7">воскресенье</option>
+			</select>-->
+
+			<!--Изменение выбранного пункта списка на JavaScript-->
+
+			<!--<select id="select">
+				<option value="one">да</option>
+				<option value="two" selected>нет</option>
+				<option value="three">три</option>
+			</select>
+			<input type="submit" id="button">-->
+
+			<!--<select id="select">
+				<option value="0">январь</option>
+				<option value="1">февраль</option>
+				<option value="2">март</option>
+				<option value="3">апрель</option>
+				<option value="4">май</option>
+				<option value="5">июнь</option>
+				<option value="6">июль</option>
+				<option value="7">август</option>
+				<option value="8">сентябрь</option>
+				<option value="9">октябрь</option>
+				<option value="10">ноябрь</option>
+				<option value="11">декабрь</option>
+			</select>-->
+
+
+			<!--Номер выбранного пункта выпадающего списка-->
+
+			<!--<select id="select">
+				<option value="one">один</option>
+				<option value="two" selected>два</option>
+				<option value="three">три</option>
+			</select>-->
+
+			<!--<select id="select">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+		</select>
+		<input id="elem" value="">-->
+
+		<!--<select id="select">
+			<option>вс</option>
+			<option>пн</option>
+			<option>вт</option>
+			<option>ср</option>
+			<option>чт</option>
+			<option>пт</option>
+			<option>сб</option>
+		</select>-->
+
+		<!--Получение пунктов выпадающего списка на JavaScript-->
+
+		<!--<select id="select">
+			<option value="one">один</option>
+			<option value="two">два</option>
+			<option value="three">три</option>
+		</select>-->
+
+		<!--<select id="select">
+			<option value="0">янв</option>
+			<option value="1">фев</option>
+			<option value="2">мар</option>
+			<option value="3">апр</option>
+			<option value="4">май</option>
+			<option value="5">июн</option>
+			<option value="6">июл</option>
+			<option value="7">авг</option>
+			<option value="8">сент</option>
+			<option value="9">окт</option>
+			<option value="10">нояб</option>
+			<option value="11">дек</option>
+		</select>-->
+
+
+		<!--Работа с пунктами выпадающего списка на JavaScript-->
+
+		<!--<select id="select">
+			<option value="0">янв</option>
+			<option value="1">фев</option>
+			<option value="2">мар</option>
+			<option value="3">апр</option>
+		</select>-->
+
+		<!--<select id="select">
+			<option value="0">янв</option>
+			<option value="1">фев</option>
+			<option value="2">мар</option>
+			<option value="3">апр</option>
+			<option value="4">май</option>
+			<option value="5">июн</option>
+			<option value="6">июл</option>
+			<option value="7">авг</option>
+			<option value="8">сент</option>
+			<option value="9">окт</option>
+			<option value="10">нояб</option>
+			<option value="11">дек</option>
+			</select>
+			<input type="submit" id="button">-->
+
+
+			<!--Пользовательские атрибуты в JavaScript-->
+
+			<!--<div id="elem" data-num="1000"></div>-->
+
+			<!--<div id="elem" data-text="str">text</div>-->
+
+			<!--<div data-num="1">text</div>
+			<div data-num="2">text</div>
+			<div data-num="3">text</div>
+			<div data-num="4">text</div>
+			<div data-num="5">text</div>-->
+
+			<!--<input type="submit" id="button" data-num="">-->
+
+			<!--<input id="elem" data-length="5">-->
+
+			<!--<input id="elem" data-min="5" data-max="10">-->
+
+			
+			<!--Пользовательские атрибуты с дефисами в JavaScript-->
+
+			<!--<div id="elem" data-my-test="1000"></div>-->
+
+			<!--<div id="elem" data-product-price="1000" data-product-amount="5">
+				товар яблоки
+			</div>-->
+
+
+			<!--Обращение через методы к data атрибутам в JavaScript-->
+
+			<!--<div id="elem" data-num="1000" data-my-num="2000"></div>-->
+
+			<!--<p id="elem" data-num="">a</p>
+			<p id="elem" data-num="">b</p>
+			<p id="elem" data-num="">c</p>
+			<p id="elem" data-num="">d</p>
+			<p id="elem" data-num="">f</p>
+			<p id="elem" data-num="">g</p>-->
+
+
+			<!--Основы работы с объектом Event в JavaScript-->
+			
+			<!--<button id="elem">text</button>-->
+
+			<!--Своиства event.clientX/event.clientY-->
+			<!--<div id="elem">0 : 0</div>-->
+
+			<!--Своиства event.pageX/event.pageY-->
+			<!--<div id="elem">0 : 0</div>-->
+
+
+			<!--Тип события в объекте Event в JavaScript-->
+			<!--<button id="elem">text</button>-->
+
+
+			<!--Элемент события в объекте Event в JavaScript-->
+			<!--<div id="elem">
+				<p>text</p>
+			</div>-->
+
+			<!--<ul id="elem">
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+			</ul>-->
+
+			<!--Получение нажатых клавиш в JavaScript-->
+
+			<!--<input id="elem1">
+			<p id = elem2>1</p>-->
+
+
+			<!--Отслеживание клавиш-модификаторов в JavaScript-->
+
+			<!--<button id="elem">text</button>-->
+
+			<!--<ul id="elem">
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+				<li>text</li>
+			</ul>-->
+
+			<!--Отмена действия по умолчанию в JavaScript-->
+
+			<!--<a href="/" id="elem">ссылка</a>-->
+
+			<!--<input id="elem1" value="" type="text">
+			<input id="elem2" value="" type="text">
+			<p id="paragraph"></p>
+			<a href="/" id="link">ссылка</a>-->
+
+
+			<!--Основы работы с контекстом в JavaScript-->
+
+			<!--<input id="elem" value="text">-->
+
+			<!--<input id="elem1" value="text1">
+			<input id="elem2" value="text2">-->
+
+			<!--Контекст непривязанной функции в JavaScript-->
+
+
+			<!--Потеря контекста в JavaScript-->
+
+			<!--<input id="elem" value="text">-->
+
+
+			<!--Решение проблемы с контекстом в JavaScript-->
+
+			<!--Первое решение проблемы-->
+			<!--<input id="elem" value="3">-->
+
+			<!--Второе решение проблемы-->
+			<!--<input id="elem" value="3">-->
+
+			<!--Третье решение проблемы-->
+			<!--<input id="elem" value="3">-->
+
+
+			<!--Привязывание контекста через метод call в JavaScript-->
+			<!--<input id="elem" value="text">-->
+
+			<!--<input id="elem1" value="text1">
+			<input id="elem2" value="text2">
+			<input id="elem3" value="text3">-->
+
+			<!--Метод call с параметрами-->
+
+			<!--<input id="elem" value="привет">-->
+
+
+			<!--Привязывание контекста через метод apply в JavaScript-->
+			<!--<input id="elem" value="привет">-->
+
+			<!--Привязывание контекста через метод bind в JavaScript-->
+			<!--<input id="elem" value="text">-->
+
+			<!--<input id="elem" value="привет">-->
+
+
+			<!--Основы работы с функцией setInterval в JavaScript-->
+			
+
+			<!--Кнопка для запуска таймера на JavaScript-->
+			<!--<button id="start">start</button>-->
+
+			<!--Кнопки для запуска и остановки таймера на JavaScript-->
+			<!--<button id="start">start</button>
+			<button id="stop">stop</button>-->
+
+			<!--<input type="submit" id="start" value="start">
+			<input type="submit" id="stop" value="stop">-->
+
+			<!--<button id="start">start</button>
+			<button id="stop">stop</button>-->
+
+
+			<!--Практика на таймеры и работу с DOM в JavaScript-->
+			<!--<input id="elem" value="10">-->
+
+
+			<!--Таймеры и потеря контекста в JavaScript-->
+			<!--<input id="elem" value="text">-->
+
+			<!--<input type="button" id="elem" value="1">-->
+
+			
+			<!--Передача контекста параметром функции setInterval-->
+			<!--<input id="elem" value="text">-->
+
+			<!--<input type="button" id="elem" value="10">-->
+
+
+			<!--Практика на таймеры и работу с DOM в JavaScript-->
+			<!--<button id="start">start</button>
+			<p id="elem">1</p>-->
+
+			<!--<button id="start">start</button>
+			<p id="elem">10</p>-->
+
+			<!--<input id="elem" value="2">-->
+
+			<!--<input id="elem" value="">
+			<p id="paragraph"></p>-->
+
+			<!--<input id="elem" value="">
+			<button id="start">start</button>
+			<p id="paragraph"></p>-->
+
+			<!--<button id="start">start</button>
+			<button id="stop">stop</button>
+			<p id="paragraph"></p>-->
+
+			<!--<p id="paragraph">ПИЗДЕЕЕЕЕЕЦЦЦЦЦЦ!!!!!!</p>-->
+
+			<!--<p id="elem"></p>-->
+
+
+			<!--Функция setTimeout в JavaScript-->
+			<!--<input type="submit" id="elem">-->
+
+			<!--<p id="elem">wqe</p>-->
+
+
+			<!--Создание и вставка элементов на JavaScript-->
+			<!--<div id="parent">
+				<p>1</p>
+				<p>2</p>
+				<p>3</p>
+			</div>-->
+
+			<!--<ol id="elem"></ol>-->
+
+			<!--<ol id="elem"></ol>
+			<button id="button">click me</button>-->
+
+			
+			<!--Привязывание событий при вставке элементов-->
+			<!--<div id="parent">
+				<p>1</p>
+				<p>2</p>
+				<p>3</p>
+			</div>-->
+
+			<!--<ol id="elem"></ol>
+			<button id="button">click me</button>-->
+
+
+			<!--Создание элементов в цикле на JavaScript-->
+			<!--<div id="parent"></div>-->
+
+			<!--<ul id="elem"></ul>-->
+
+
+			<!--Навешивание обработчиков в цикле на JavaScript-->
+			<!--<div id="parent"></div>-->
+
+			<!--<div id="parent"></div>
+			<p id="paragraph"></p>-->
+
+
+			<!--Создание элементов из массива на JavaScript-->
+			<!--<div id="parent"></div>-->
+
+
+			<!--Практика на создание списков ul на JavaScript-->
+			<!--<ul id="list"></ul>-->
+
+			<!--<ul id="elem"></ul>-->
+
+
+			<!--Создание HTML таблиц на JavaScript-->
+			<!--<table id="table"></table>-->
+
+			<!--<input id="elem1" value="">
+			<input id="elem2" value="">
+			<button id="button">click me</button>
+			<table id="table"></table>-->
+
+			<!--Последовательное заполнение HTML таблиц-->
+			<!--<table id="table"></table>-->
+
+			<!--Создание HTML таблицы из массива на JavaScript-->
+			<!--<table id="table"></table>-->
+
+			<!--Создание HTML таблицы из массива объектов-->
+			<!--<table id="table"></table>-->
+
+			<!--Добавление рядов и колонок в HTML таблицу-->
+			<!--<table id="table"></table>
+			<button id="button">click me</button>-->
+
+			<!--Добавление колонок-->
+			<!--<table id="table"></table>-->
+
+			<!--<table id="table">
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<button id="button">click me</button>-->
+
+
+			<!--Изменение ячеек HTML таблицы на JavaScript-->
+			<!--<table id="table">
+				<tr>
+					<td>2</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>5</td>
+				</tr>
+			</table>
+			<button id="button">click me</button>-->
+
+
+			<!--Порядковый номер ячейки таблицы на JavaScript-->
+			<!--<table id="table">
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>-->
+
+
+			<!--Номер колонки и ряда таблицы на JavaScript-->
+			<!--<table id="table">
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>-->
+
+
+			<!--Порядковый номер ячейки по клику на JavaScript-->
+			<!--<table id="table">
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>-->
+
+			<!--Порядковый номер клика в ячейке HTML таблицы-->
+			<!--<table id="table">
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>-->
+
+
+			<!--Удаление элементов на JavaScript-->
+			<!--<div id="parent">
+				<p id="elem">elem 1</p>
+				<p>elem 2</p>
+			</div>-->
+
+			<!--<ul id="parent">
+				<li>1</li>
+				<li id="elem">2</li>
+				<li>3</li>
+			</ul>
+			
+			<input type="submit" id="button">-->
+
+			<!--<ul id="parent">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+			
+			<input type="submit" id="button">-->
+
+			<!--<ul>
+				<li>1</li>
+				<li id="elem">2</li>
+				<li>3</li>
+			</ul>-->
+
+
+			<!--Самоудаление элементов на JavaScript-->
+			<!--<div id="parent">
+				<p>elem 1</p>
+				<p>elem 2</p>
+				<p>elem 3</p>
+				<p>elem 4</p>
+				<p>elem 5</p>
+			</div>-->
+
+			<!--<ul id="parent">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>-->
+
+
+			<!--Самоудаление новых элементов на JavaScript-->
+			<!--<div id="parent"></div>-->
+
+			<!--<ul id="parent">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+			
+			<input type="submit" id="button">-->
+
+
+			<!--Ссылка на удаление элемента на JavaScript-->
+			<!--<div id="parent">
+				<p id="elem">text</p>
+				<a href="#" id="remove">remove</a>
+			</div>-->
+
+			<!--preventDefault:-->
+			<!--<div id="parent">
+				<p id="elem">text</p>
+				<a href="" id="remove">remove</a>
+			</div>-->
+
+
+			<!--Создание ссылок для удаление элементов на JavaScript-->
+			<!--<div id="parent">
+				<p>text1</p>
+				<p>text2</p>
+				<p>text3</p>
+			</div>-->
+
+			<!--<ul id="parent">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>-->
+
+			<!--<table id="table">
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>-->
+
+			<!--<ul id="parent">
+				<li>text1</li>
+				<li>text2</li>
+				<li>text3</li>
+			</ul>-->
+			
+
+			<!--Редактирование отдельного элемента на JavaScript-->
+			<!--<div id="parent">
+				<p id="elem">text</p>
+				<input id="input">
+			</div>-->
+
+			<!--Появление инпута-->
+			<!--<div id="parent">
+				<p id="elem">text</p>
+			</div>-->
+
+
+			<!--Прячем текст при редактировании элемента на JavaScript-->
+			<!--<div id="parent">
+				<p id="elem">text</p>
+			</div>-->
+
+			<!--Редактирование в группе элементов на JavaScript-->
+			<!--<p>text1</p>
+			<p>text2</p>
+			<p>text3</p>-->
+
+			<!--<ul id="table">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>-->
+
+			<!--<table id="table">
+				<tr>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+			</table>-->
+
+
+			<!--Одновременное редактирование и удаление элементов-->
+			<!--<div id="parent">
+				<p><span>text1</span></p>
+				<p><span>text2</span></p>
+				<p><span>text3</span></p>
+			</div>-->
+
+			<!--<div id="parent">
+				<p>text1</p>
+				<p>text2</p>
+				<p>text3</p>
+			</div>-->
+
+			<!--Стилизация элементов на JavaScript-->
+			<!--<p>text1</p>
+			<p>text2</p>
+			<p>text3</p>-->
+
+			<!--<table id="table">
+				<tr>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+			</table>-->
+
+
+			<!--Кнопки для скрытия и показа элемента на JavaScript-->
+			<!--<p id="elem">text</p>
+			<input type="submit" id="show" value="show">
+			<input type="submit" id="hide" value="hide">-->
+
+
+			<!--Много элементов с кнопками показа на JavaScript-->
+			<!--<p>1</p><button>toggle</button>-->   <!--Второй способ работает и тут-->
+			<!--<p>2</p><button>toggle</button>-->
+			<!--<p>3</p><button>toggle</button>-->
+
+			<!--Первый способ-->
+			<!--<p id="elem1">1</p><button data-elem="elem1">toggle</button>
+			<p id="elem2">2</p><button data-elem="elem2">toggle</button>
+			<p id="elem3">3</p><button data-elem="elem3">toggle</button>-->
+
+
+			<!--Активация элементов на JavaScript-->
+			<!--<table id="table">
+				<tr>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+			</table>-->
+
+			<!--<ul id="table">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>-->
+
+
+			<!--Чередование стилей активации на JavaScript-->
+			<!--<table id="table">
+				<tr>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+			</table>-->
+
+			<!--Чередование многих цветов из массива-->
+			<!--<table id="table">
+				<tr>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+			</table>-->
+
+			
+			<!--Активация ограниченного количества элементов-->
+			<!--<table id="table">
+				<tr>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+			</table>-->
+
+			<!--<table id="table">
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>3</td>
+					<td>4</td>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>4</td>
+					<td>3</td>
+					<td>4</td>
+					<td>3</td>
+					<td>4</td>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+			</table>-->
+
+
+			<!--Практика на изменение элементов на JavaScript-->
+
+			<!--<ul id="table"></ul>
+			<input type="text" value="" id="inputAddLi">-->
+
+			<!--Массив объектов и таблица-->
+
+			<!--<table id="table"></table>
+			<input type="text" value="" id="elem1">
+			<input type="text" value="" id="elem2">
+			<input type="text" value="" id="elem3">
+			<input type="submit" id="button" value="add">-->
+
+
+			<!--Массив объектов и список-->
+			<!--<ul id="link"></ul>
+			<input type="text" value="" id="name">
+			<input type="text" value="" id="age">
+			<input type="text" value="" id="salary">
+			<input type="submit" id="button" value="add">-->
+			
+
+
+			<!--Поиск ячеек таблицы с помощью атрибута data-->
+			<!--<table id="table">
+				<tr>
+					<td data-col="1"></td>
+					<td data-col="2"></td>
+					<td data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-col="1"></td>
+					<td data-col="2"></td>
+					<td data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-col="1"></td>
+					<td data-col="2"></td>
+					<td data-col="3"></td>
+				</tr>
+			</table>-->
+
+			<!--<table id="table">
+				<tr>
+					<td data-col="1"></td>
+					<td data-col="2"></td>
+					<td data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-col="1"></td>
+					<td data-col="2"></td>
+					<td data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-col="1"></td>
+					<td data-col="2"></td>
+					<td data-col="3"></td>
+				</tr>
+			</table>-->
+
+			<!--<table id="table">
+				<tr>
+					<td data-row="1" data-col="1"></td>
+					<td data-row="1" data-col="2"></td>
+					<td data-row="1" data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-row="2" data-col="1"></td>
+					<td data-row="2" data-col="2"></td>
+					<td data-row="2" data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-row="3" data-col="1"></td>
+					<td data-row="3" data-col="2"></td>
+					<td data-row="3" data-col="3"></td>
+				</tr>
+			</table>
+			<input type="submit" id="button" value="add">-->
+
+
+			<!--Добавление номера колонки и ряда в таблицу-->
+			<!--<table id="table">
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<input type="submit" id="button" value="add">-->
+
+			<!--<table id="table">
+				<tr>
+					<td data-row="1" data-col="1"></td>
+					<td data-row="1" data-col="2"></td>
+					<td data-row="1" data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-row="2" data-col="1"></td>
+					<td data-row="2" data-col="2"></td>
+					<td data-row="2" data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-row="3" data-col="1"></td>
+					<td data-row="3" data-col="2"></td>
+					<td data-row="3" data-col="3"></td>
+				</tr>
+			</table>-->
+
+			<!--Поиск ячеек таблицы через селектор CSS на JavaScript-->
+			<!--<table id="table">
+				<tr>
+					<td data-row="1" data-col="1"></td>
+					<td data-row="1" data-col="2"></td>
+					<td data-row="1" data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-row="2" data-col="1"></td>
+					<td data-row="2" data-col="2"></td>
+					<td data-row="2" data-col="3"></td>
+				</tr>
+				<tr>
+					<td data-row="3" data-col="1"></td>
+					<td data-row="3" data-col="2"></td>
+					<td data-row="3" data-col="3"></td>
+				</tr>
+			</table>-->
+
+
+			<!--****************************************************-->
+			<!--Функции для работы с DOM элементом на JavaScript-->
+			<!--<p id="elem1"></p>
+			<p id="elem2"></p>-->
+
+			<!--<input>-->
+
+			<!--Функции для работы с группой DOM элементов-->
+			<!--<p class="elem"></p>
+			<p class="elem"></p>
+			<p class="elem"></p>-->
+
+			<!--<p class="elem">1</p>
+			<p class="elem">2</p>
+			<p class="elem">3</p>-->
+
+
+			<!--Передача коллбэка для работы с DOM на JavaScript-->
+			<!--<p class="elem">1</p>
+			<p class="elem">2</p>
+			<p class="elem">3</p>
+			<p class="elem">4</p>
+			<p class="elem">5</p>-->
+
+
+			<!--Передача порядкового номера в коллбэк на JavaScript-->
+			<!--<p class="elem">1</p>
+			<p class="elem">2</p>
+			<p class="elem">3</p>
+			<p class="elem">4</p>
+			<p class="elem">5</p>-->
+
+
+			<!--Передача DOM элемента параметром функции-->
+			<!--<p id="elem1"></p>
+			<p id="elem2"></p>-->
+
+			<!--<p id="elem1">какого</p>
+			<p id="elem2">ёбаный</p>-->
+
+			<!--<p class="elem">1</p>
+			<p class="elem">2</p>
+			<p class="elem">3</p>
+			<p class="elem">4</p>
+			<p class="elem">5</p>-->
+
+			<!--<input>-->
+
+
+			<!--Передача DOM группы элементов параметрами функций-->
+			<!--<p class="elem"></p>
+			<p class="elem"></p>
+			<p class="elem"></p>
+			<p class="elem"></p>
+			<p class="elem"></p>-->
+
+			<!--<ul class="link"></ul>-->
+
+
+			<!--Функция для создания HTML таблиц на JavaScript-->
+			<!--<div id="elem"></div>-->
+
+			<!--<div id="elem1"></div>
+			<div id="elem2"></div>-->
+
+			<!--<div class="parent"></div>-->
+
+
+			<!--Возврат таблицы из функции на JavaScript-->
+			<!--<div id="elem">
+				<p>1</p>
+				<p>2</p>
+				<p>3</p>
+			</div>-->
+
+
+			<!--Функция для создания таблицы из двухмерного массива-->
+			<!--<div id="elem"></div>-->
+
+			
+			
+
+
+
+
+			
+
+
+
+			
+
+
+			
+
+
+			
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
 
 	<script src="js/main.js"></script>
+	<!--<script src="js/main_udemy.js"></script>-->
 </body>
 </html>
