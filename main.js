@@ -9355,7 +9355,4743 @@ function func(){
     this.value < 10 ? this.value++ : this.removeEventListener('click', func);  
 }
 */
+                    //Отвязывание обработчиков событий в цикле
+/*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+    elem.addEventListener('click', func);
+}
+
+function func() {
+    alert(this.innerHTML);
+}
+*//*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+    elem.addEventListener('click', func);
+}
+
+function func() {
+    alert(this.innerHTML);
+    this.removeEventListener('click', func); // отвязываем обработчик
+}
+*//*
+let elems = document.querySelectorAll("p");
+
+for (let elem of elems){
+    elem.addEventListener("click", func);
+}
+
+function func(){
+    this.innerHTML += "!";
+    this.removeEventListener("click", func);
+}
+*/
+                //Отвязывание анонимных функций в JavaScript
+/*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+    elem.addEventListener('click', function () {
+        alert(this.innerHTML);
+    });
+}
+*//*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+    elem.addEventListener('click', function func() { // дали имя функции
+        alert(this.innerHTML);
+    });
+}
+*//*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+    elem.addEventListener('click', function func() {
+        alert(this.innerHTML);
+        this.removeEventListener('click', func); // отвязываем функцию
+    });
+}
+*/
+                    //Работа с атрибутами через методы в JavaScript
+            //Получение
+            //Метод getAttribute
+    //Давайте выведем содержимое атрибута value элемента:
+/*
+let elem = document.querySelector('#elem');
+let value = elem.getAttribute('value');
+
+console.log(value);
+*//*
+let elem = document.querySelector("#elem");
+let value = elem.getAttribute("value");
+console.log(value);
+*//*
+let elem = document.querySelector("#elem");
+let classik = elem.getAttribute("class");
+console.log(classik);
+*/
+            //Установка
+            //Метод setAttribute
+    //Метод setAttribute позволяет изменить значение заданного атрибута какого-либо тега.
+    //элемент.setAttribute(имя атрибута, новое значение)
+/*
+let elem = document.querySelector('#elem');
+elem.setAttribute('value', '!!!');
+*//*
+let elem = document.querySelector("#elem");
+elem.setAttribute("class", "valid");
+*//*
+let elem = document.querySelector("#elem");
+elem.setAttribute("value", "text");
+*/
+            //Удаление
+            //Метод removeAttribute
+    //Метод removeAttribute удаляет заданный атрибут у какого-либо тега.
+    //элемент.removeAttribute(имя атрибута)
+/*
+let elem = document.querySelector('#elem');
+elem.removeAttribute('value');
+*//*
+let elem = document.querySelector("#elem");
+elem.removeAttribute("value");
+*/
+            //Проверка
+            //Метод hasAttribute
+    //Метод hasAttribute проверяет наличие заданного атрибута у элемента. Если атрибут есть - выведет true, если нет - выведет false.
+    //элемент.hasAttribute(имя атрибута)
+/*
+let elem = document.querySelector('#elem');
+console.log(elem.hasAttribute('value'));
+*//*
+let elem = document.querySelector("#elem");
+console.log(elem.hasAttribute("value"));
+*/
+                    //Разница между способами получения атрибутов
+            //при изменении свойства значение атрибута, полученное через метод, не меняется!
+/*
+let elem = document.querySelector('#elem');
+
+elem.value = 'new'; // поменяли свойство
+
+let value = elem.getAttribute('value');
+console.log(value); // выведет 'old' - свойство не поменялось
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    if(elem.value == elem.getAttribute("value")){
+        alert("Без изменений");
+    } else {
+        alert("Есть изменения");
+    }
+})
+*/
+                    //Изменение атрибута
+            //А вот изменение атрибута обновляет свойство:
+/*
+elem.setAttribute('value', 'new'); // поменяли атрибут
+
+let value = elem.value;
+console.log(value); // выведет 'new'
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    if(elem.value != elem.getAttribute("value")){   //можно без if
+        elem.value = elem.getAttribute("value");    //просто вот этого достаточно
+    }
+});
+*/
+                    //Манипулирование CSS классами в JavaScript
+                    //Массив классов
+            //Свойство classList
+        //элемент.classList
+/*
+let elem = document.querySelector('#elem');
+
+let length = elem.classList.length;
+console.log(length);
+*//*
+let elem = document.querySelector('#elem');
+let classNames = elem.classList;
+
+for (let className of classNames) {
+    document.write(className + '<br>');
+}
+*//*
+let elem = document.querySelector("#elem");
+let lenght = elem.classList.length;
+console.log(lenght);
+*//*
+let elem = document.querySelector("#elem");
+let classNames = elem.classList;
+
+for (let className of classNames){
+    document.write(className + '<br>');
+}
+*/
+                //Добавление классов
+                //Метод add объекта classList
+            //элемент.classList.add(класс);
+/*
+let elem = document.querySelector('#elem');
+elem.classList.add('kkk');
+*//*
+let elem = document.querySelector('#elem');
+elem.classList.add('zzz');
+*//*
+let elem = document.querySelector("#elem");
+elem.classList.add("xxx");
+*/
+                //Удаление классов
+                //Метод remove объекта classList
+        //Метод remove объекта classList удаляет заданный CSS класс элемента.
+        //элемент.classList.remove(класс);
+/*
+let elem = document.querySelector('#elem');
+elem.classList.remove('ggg');
+*//*
+let elem = document.querySelector("#elem");
+elem.classList.remove("www", "zzz");
+*/
+                //Проверка классов
+                //Метод contains объекта classList
+        //Метод contains объекта classList проверяет наличие CSS класса элемента.
+        //элемент.classList.contains(класс);
+/*
+let elem = document.querySelector('#elem');
+
+let contains = elem.classList.contains('ggg');
+console.log(contains);
+*//*
+let elem = document.querySelector("#elem");
+let contains = elem.classList.contains("ggg");
+console.log(contains);
+*/
+                //Чередование классов
+                //Метод toggle объекта classList
+        //Метод toggle объекта classList чередует заданный CSS класс элемента: добавляет класс, если его нет и удаляет, если есть.
+        //элемент.classList.toggle(класс);
+/*
+let elem = document.querySelector('#elem');
+elem.classList.toggle('zzz');
+*//*
+let elem = document.querySelector('#elem');
+elem.classList.toggle('zzz');
+*//*
+let elem = document.querySelector("#elem");
+elem.classList.toggle("www");
+*/
+                //Стилизация элементов через атрибут style в JavaScript
+                //elem.style.color,
+/*
+let elem = document.querySelector('#elem');
+elem.style.color = 'red';
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    elem.style.height = "200px";
+    elem.style.width = "200px";
+    elem.style.border = "1px solid red";
+});
+*/
+                //Свойства с дефисом
+            //elem.style.fontSize = '20px';
+/*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    elem.style.fonrSize = "20px";
+    elem.style.borderTop = "5px solid black";
+    elem.style.background = "red";
+});
+*/
+                //Исключение
+            //cssFloat
+        //elem.style.cssFloat = 'right';
+/*
+let ul = document.querySelector("ul");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    ul.style.cssFloat = "left";
+    ul.style.border = "2px solid red";
+});
+*/
+                //Стилизация с помощью CSS классов на JavaScript
+/*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+	elem.addEventListener('click', function() {
+		this.classList.add('colored'); // добавляем абзацу класс
+	});
+}
+*//*
+let elem = document.querySelector("#elem");
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+let button3 = document.querySelector("#button3");
+
+button1.addEventListener("click", function(){
+    elem.classList.toggle("decoration");  //toggle применяет нажатием, а 2 кликом отменяет
+});
+
+button2.addEventListener("click", function () {
+    elem.classList.toggle("colored");
+});
+
+button3.addEventListener("click", function () {
+    elem.classList.toggle("fonts");
+});
+*/
+                    //Дополнительное преимущество
+/*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+	elem.addEventListener('click', function() {
+		this.classList.toggle('colored');
+	});
+}
+*/
+                    //Применение
+/*
+let button = document.querySelector('#button');
+let elem = document.querySelector('#elem');
+
+button.addEventListener('click', function() {
+	elem.classList.toggle('active');
+});
+*/
+                    //Отработка изученного материала на работу с DOM
+/*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("blur", function(){
+    elem.innerHTML = button.value;
+});
+*//*
+let inputs = document.querySelectorAll("input");
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+for (let input of inputs){
+    let sum = 0;
+    sum +=Number(input.value);
+    console.log(sum)
+    button.addEventListener("click", function(){
+        elem.innerHTML = sum;
+    })
+    
+}
+*//*
+button.addEventListener('click', func);
+
+function func() {
+    let sum = 0;
+
+    for (var input of inputs) {
+        sum += +input.value;
+    }
+    elem.innerHTML = sum;
+
+    // очистим инпут
+    for (var input of inputs) {
+       input.value = '';
+    }
+}
+*//*
+let input = document.querySelector('input');
+input.addEventListener('blur', func);
+
+function func() {
+    let num = input.value;
+    let arr = num.split('');
+    let sum = 0;
+
+    for (var elem of arr) {
+        sum += +elem;
+    }
+    button.value = sum;
+}
+*//*
+let button = document.querySelector('#button');
+button.addEventListener('blur', func);
+
+function func() {
+    let num = button.value;
+    let arr = num.split(',');
+    let sum = 0;
+
+    for (var elem of arr) {
+        sum += +elem;
+    }
+    button.value = sum;
+}
+*//*
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+let button3 = document.querySelector("#button3");
+let button4 = document.querySelector("#button4");
+*//*
+let fullname = document.querySelector('#fullname');
+let name = document.querySelector('#name');
+let patronymic = document.querySelector('#patronymic');
+let surname = document.querySelector('#surname');
+
+fullname.addEventListener('blur', function () {
+    let arr = fullname.value.split(' ');
+    surname.value = arr[0];
+    patronymic.value = arr[1];
+    name.value = arr[2];
+});
+*//*
+let fullname = document.querySelector('#fullname');
+
+fullname.addEventListener('blur', function () {
+    let arr = fullname.value.split(' ');
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+    }
+    fullname.value = arr.join(' ');
+});
+*//*
+let button = document.querySelector("#button");
+
+button.addEventListener("blur", function(){
+    let sum = button.value.split(" ").length; //length считает сколько слов
+    button.value = sum;
+});
+button.addEventListener('focus', function () {  //чистит инпут
+    button.value = '';
+});
+*//*
+let button = document.querySelector("#button");
+
+button.addEventListener("blur", function(){
+    button.value = button.value.split(".").reverse().join("-");
+});
+*//*
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+
+button2.addEventListener("click", func);
+
+function func(){
+    let str = button1.value
+    str = str.split("").reverse().join("");
+    if(str == button1.value){
+        alert("true");
+    } else {
+        alert("false");
+    }
+}
+*//*
+let button = document.querySelector("#button");
+
+button.addEventListener("blur", function(){
+    let str = button.value;
+    str = str.split("");
+    console.log(str);
+    for (let i = 0; i < str.length; i++){
+        if(str[i] == 3){
+            alert("true");
+        } 
+    }
+});
+        //аналог, но короче через indexOf !!!!!!!!!
+input.addEventListener('blur', function() {
+let res = input.value.split('').indexOf('3');
+res != -1 ? paragraph.innerHTML = 'Существует' : paragraph.innerHTML = 'Не существует';
+});
+*//*
+let elems = document.querySelectorAll("p");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    let i = 0;
+    for(let elem of elems){
+        elem.innerHTML += ++i
+    }
+});
+*//*
+let elems = document.querySelectorAll("a");
+
+for (let elem of elems){
+    elem.addEventListener("click", function func(){
+        this.innerHTML += "(" + a.href + ")";
+        this.removeEventListener("click", func);
+    });
+}
+*//*
+let elems = document.querySelectorAll("a");
+
+for(elem of elems) {
+    if (elem.href.startWith("http://")){
+        elem.href +="&rarr";
+        console.log(elem.href)
+    }
+}
+*//*
+let elems = document.querySelectorAll("p");
+
+for(let elem of elems){
+    elem.addEventListener("click", function func(){
+        this.innerHTML **= 2;
+        this.removeEventListener("click", func);
+    });
+}
+*//*
+let button = document.querySelector("#button");
+
+button.addEventListener('blur', function func() {
+    let dateArr = button.value.split('.');
+    // преобразуем значения к числовомму типу
+    let day = parseInt(dateArr[0]);
+    let mounth = parseInt(dateArr[1] - 1);
+    let year = parseInt(dateArr[2]);
+
+    let date = new Date(year, mounth, day);
+    let dayWeek = date.getDay();
+    let daysOfWeekArr = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+    alert(daysOfWeekArr[dayWeek]);
+});
+*//*
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+let button3 = document.querySelector("#button3");
+
+button2.addEventListener("click", function(){
+    button1.value = Number(button1.value) + 1;
+});
+
+button3.addEventListener("click", function func() {
+    button1.value = Number(button1.value) - 1;
+    if(button1 == 0){
+        button1.dispatchEvent()
+    }
+});
+*//*
+let elems = document.querySelectorAll("p");
+let button = document.querySelector("#button");
+
+for(let elem of elems){
+    elem.addEventListener("click", function(){
+        button.value++;
+    });
+}
+*//*
+let input = document.querySelector("input");
+let ul = document.querySelector("ul");
+let button = document.querySelector("#button1");
+
+button.addEventListener('click', function func() {
+    let arr = input.value.split(',');
+
+    document.write("<ul>");
+
+    for (var elem of arr) {
+        document.write("<li>" + elem + "</li>");
+    }
+    document.write("</ul>");
+});
+*//*
+let input = document.querySelector("input");
+let button = document.querySelector("#button1");
+let p = document.querySelector("p");
+
+button.addEventListener("click", function(){
+    p.innerHTML += input.value + ",";
+});
+*//*
+let divs = document.querySelectorAll("div");
+
+for(let div of divs){
+    document.write(div.innerHTML.slice(0, 10).concat("..."));
+}
+*//*
+let p = document.querySelector("p");
+let arr = [1, 2, 3, 4, 5];
+let sum = 0;
+
+for(let elem of arr){
+    
+    document.write("<input.value=" + elem + "><b");
+    sum += elem;
+}
+p.innerHTML += sum;
+*//*
+let input = document.querySelector("input");
+
+input.addEventListener("blur", function(){
+    let num = input.value;
+    if(num >= 1 && num <= 100){
+        input.style.backgroundColor = "green";
+    } else {
+        input.style.backgroundColor = "red";
+    }
+});
+*//*
+let input = document.querySelector('input');
+let button = document.querySelector('button');
+
+button.addEventListener('click', function () {
+    let str = '';
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    while (str.length <= 8) {
+        str += String.fromCharCode(getRandomInt(48, 90));
+    }
+    input.value = str;
+})
+*//*
+let input = document.querySelector('input');
+let button = document.querySelector('button');
+
+button.addEventListener('click', function () {
+    let str = input.value;
+    let newStr = '';
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    while (newStr.length < str.length) {
+        newStr += str[getRandomInt(0, str.length - 1)];
+    }
+    input.value = newStr;
+})
+*/
+                        //Нахождение элементов по родственным связям
+                //Потомки элементов
+        //элемент.firstElementChild
+/*
+let parent = document.querySelector('#parent');
+let text = parent.firstElementChild.innerHTML;
+
+console.log(text);
+*/
+        //элемент.lastElementChildChild
+/*
+let parent = document.querySelector('#parent');
+let text = parent.lastElementChild.innerHTML;
+
+console.log(text);
+*/
+        //элемент.children
+/*
+let parent = document.querySelector('#parent');
+let elems = parent.children;
+
+for (let elem of elems) {
+	console.log(elem.innerHTML);
+}
+*//*
+let elem = document.querySelector('#elem');
+let text = elem.firstElementChild.innerHTML;
+elem.firstElementChild.style.color = 'red';
+*//*
+let elem = document.querySelector('#elem');
+let text = elem.lastElementChild.innerHTML;
+elem.lastElementChild.style.color = 'red';
+*//*
+let elem = document.querySelector("#elem");
+let elems = elem.children;
+
+for (let elem of elems){
+    elem.innerHTML += "!";
+}
+*/
+                    //Родители элементов
+            //Свойство parentElement
+        //элемент.parentElement
+/*
+let elem = document.querySelector('#elem');
+let id = elem.parentElement.id;
+
+console.log(id);
+*//*
+let elem = document.querySelector("#elem");
+let id = elem.parentElement.id;
+elem.parentElement.style.border = "1px solid red"
+console.log(id);
+*//*
+let elem = document.querySelector("#elem");
+let ul = elem.parentElement;
+let div = ul.parentElement.style.border = "1px solid red";
+*/
+                    //Поиск всех родителей
+            //Метод closest
+        //элемент.closest('селектор')
+/*
+let elem = document.querySelector('#child');
+let parent = elem.closest('.www');
+console.log(parent.id);
+*//*
+let elem = document.querySelector("#elem");
+let parent = elem.closest("div");
+console.log(parent)
+*//*
+let elem = document.querySelector("#elem");
+let www = elem.closest(".www");
+console.log(www)
+*/
+                    //Поиск соседей
+            //Свойство previousElementSibling
+        //элемент.previousElementSibling
+/*
+let elem = document.querySelector('#elem');
+let text = elem.previousElementSibling.innerHTML;
+
+console.log(text);
+*/
+            //Свойство nextElementSibling
+        //элемент.nextElementSibling
+/*
+let elem = document.querySelector('#elem');
+let text = elem.nextElementSibling.innerHTML;
+
+console.log(text);
+*//*
+let elem = document.querySelector("#elem");
+let text = elem.previousElementSibling.innerHTML += "!";
+*//*
+let elem = document.querySelector("#elem");
+let text = elem.nextElementSibling.innerHTML += "!";
+*//*
+let elem = document.querySelector("#elem");
+let text = elem.nextElementSibling;
+let text1 = text.nextElementSibling.innerHTML += "!";
+*//*
+let elem = document.querySelector("#elem");
+let text = elem.previousElementSibling;
+let text1 = text.previousElementSibling.innerHTML += "!";
+*/
+                //Другие полезные методы для поиска элементов
+            //Получение по id
+        //Метод getElementById
+    //document.getElementById(ай ди элемента)
+/*
+let elem = document.getElementById('elem');
+elem.value = '!!!';
+*//*
+let elem = document.getElementById("elem");
+elem.innerHTML = "!!!!!"
+*/
+                //Получение по имени тега
+            //Метод getElementsByTagName
+        //document.getElementsByTagName(имя тега);
+/*
+let elems = document.getElementsByTagName('p');
+
+for (let elem of elems) {
+	elem.innerHTML = '!!!';
+}
+*//*
+let elems = document.getElementsByTagName("li");
+
+for(let elem of elems){
+    elem.style.color = "red";
+}
+*/
+                //Получение по имени класса
+            //Метод getElementsByClassName
+        //document.getElementsByClassName(имя класса)
+/*
+let elems = document.getElementsByClassName('www');
+
+for (let elem of elems) {
+	elem.innerHTML = '!!!';
+}
+*//*
+let elems = document.getElementsByClassName("www");
+
+for (let elem of elems){
+    elem.style.color = "red";
+}
+*/
+                //Поиск элементов внутри другого элемента
+/*
+let parent = document.querySelector('#parent');
+let elems = parent.querySelectorAll('.child');
+
+let elems = document.querySelectorAll('#parent .child');
+*//*
+let parent = document.querySelector('#parent');
+
+let elems1 = parent.querySelectorAll(".www");
+console.log(elems1);
+
+let elems2 = parent.querySelectorAll(".ggg");
+console.log(elems2);
+*/
+                //Работа с текстареа в JavaScript
+/*
+let elem = document.querySelector('#elem');
+console.log(elem.value); // выведет 'text'
+*//*
+let elem = document.querySelector('#elem');
+let elem1 = document.querySelector('#elem1');
+
+elem.addEventListener("blur", function(){
+    elem1.innerHTML = elem.value;
+});
+*/
+                //Атрибут disabled в JavaScript
+/*
+let elem = document.querySelector('#elem');
+console.log(elem.disabled); // выведет true
+*//*
+let elem = document.querySelector('#elem');
+elem.disabled = false;
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    elem.disabled = true;
+});
+*//*
+let elem = document.querySelector("#elem");
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+
+button1.addEventListener("click", function () {
+    elem.disabled = true;
+});
+
+button2.addEventListener("click", function () {
+    elem.disabled = false;
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+    if(elem.disabled == true){
+        alert("block");
+    } else {
+        alert("non");
+    }
+});
+*/
+                    //Работа с чекбоксами в JavaScript
+/*
+let elem = document.querySelector('#elem');
+console.log(elem.checked);
+*//*
+let elem = document.querySelector("#elem");
+let button1 = document.querySelector("#button1");
+let button2 = document.querySelector("#button2");
+
+button1.addEventListener("click", function(){
+    elem.checked = true;
+});
+
+button2.addEventListener("click", function () {
+    elem.checked = false;
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+let paragraph = document.querySelector("#paragraph");
+
+button.addEventListener("click", function(){
+    if(elem.checked == true){
+        paragraph.innerHTML = "helloebatb";
+    } else {
+        paragraph.innerHTML = "good bay"
+    }
+});
+*/
+                    //Чередование атрибутов без значений
+/*
+let elem   = document.querySelector('#elem');
+let button = document.querySelector('#button');
+
+//button.addEventListener('click', function () {
+//    if (elem.disabled) {
+//        elem.disabled = false;
+//    } else {
+//        elem.disabled = true;
+//    }
+//});
+
+button.addEventListener('click', function () {
+    elem.disabled = !elem.disabled;
+});
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    if(elem.checked){
+        elem.checked = false;
+    } else {
+        elem.checked = true;
+    }
+});
+*/
+                    //Работа с радиокнопками в JavaScript
+/*
+let radios = document.querySelectorAll('input[type="radio"]');
+let button = document.querySelector('#button');
+
+button.addEventListener('click', function() {
+	for (let radio of radios) {
+		if (radio.checked) {
+			console.log(radio.value);
+		}
+	}
+});
+*//*
+let radios = document.querySelectorAll('input[type="radio"]');
+let button = document.querySelector('#button');
+let paragraph = document.querySelector("#paragraph");
+
+button.addEventListener("click", function(){
+    for (let radio of radios) {
+        if(radio.checked){
+            paragraph.innerHTML = radio.value;
+        }
+    }
+});
+*/
+                    //Событие change в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('change', function() {
+	console.log(this.value);
+});
+*//*
+let elem = document.querySelector("#elem");
+let paragraph = document.querySelector("#paragraph");
+
+elem.addEventListener("change", function(){
+    paragraph.innerHTML = this.value;
+});
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("change", function(){
+    alert(this.value);
+});
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("change", function(){
+    if(this.value.length < '5'){
+        elem.style.color = "green";
+    } else {
+        elem.style.color = "red";
+    }
+});
+*/
+                //Событие input в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('input', function() {
+	console.log(this.value);
+});
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("input", function(){
+    if(this.value.length == 5){
+        alert("выдостигли 5 букаф");
+    }
+});
+*//*
+let elem = document.querySelector("#elem");
+let paragraph = document.querySelector("#paragraph");
+
+elem.addEventListener("input", function(){
+    let result;
+    let num = 5;
+    let count = this.value.length;
+
+    if(count < num){
+        res = "Еще можно ввести " + (num - count) + "символов";
+    } else if (count == num) {
+        res = "Уже введено " + count + " символов";
+    } else {
+        res = "Длина текста превышена на " + (count = num) + "символов";
+    }
+    paragraph.innerHTML = res;
+});
+*/
+                    //Методы focus и blur в JavaScript
+/*
+let elem   = document.querySelector('#elem');
+let button = document.querySelector('#button');
+
+button.addEventListener('click', function() {
+	elem.focus();
+});
+*//*
+let elem1 = document.querySelector('#elem1');
+let elem2 = document.querySelector('#elem2');
+
+elem1.addEventListener("input", function(){
+    if(elem1.value.length == 2){
+        elem2.focus();
+    }
+});
+
+elem2.addEventListener("input", function(){
+    if(elem2.value.length == 2){
+        elem2.blur();
+    }
+});
+*/
+                    //Работа с выпадающими списками в JavaScript
+/*
+let select = document.querySelector('#select');
+
+select.addEventListener('change', function () {
+    console.log(this.value);
+});
+*//*
+let select = document.querySelector('#select');
+let paragraph = document.querySelector("#paragraph");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    paragraph.innerHTML = select.value;
+});
+*//*
+let select = document.querySelector("#select");
+
+select.addEventListener("change", function(){
+    if(this.value % 4 == 0){
+        alert("Высокосный год");
+    } else {
+        alert("Обычный");
+    }
+});
+*/
+                    //Атрибут value
+/*
+select.addEventListener('change', function(){
+	console.log(this.value);
+});
+*//*
+let select = document.querySelector("#select");
+
+select.addEventListener("change", function(){
+    if (this.value == 6 || this.value == 7){
+        alert("выходные");
+    } else {
+        alert("рабочие");
+    }
+});
+*/
+                    //Изменение выбранного пункта списка на JavaScript
+/*
+let select = document.querySelector('#select');
+let button = document.querySelector('#button');                    
+
+button.addEventListener('click', function() {
+	select.value = 'one';
+});
+*//*
+let options = document.querySelectorAll("#select option");
+let numOfMonth = new Date().getMonth();
+
+for(let option of options){
+    if(option.value == numOfMonth) {
+        option.selected = "true";
+    }
+}
+*/
+                    //Номер выбранного пункта выпадающего списка
+/*
+let select = document.querySelector('#select');
+console.log(select.selectedIndex); // выведет 1
+*//*
+let select = document.querySelector('#select');
+select.selectedIndex = 2; // выберет 'три'
+*//*
+let options = document.querySelector("#select");
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("blur", function(){
+    select.selectedIndex = elem.value;
+});
+*//*
+let select = document.querySelector('#select');
+select.selectedIndex = new Date().getDay();
+*/
+                    //Получение пунктов выпадающего списка на JavaScript
+/*
+//Вопрос: как нам получить все пункты этого списка ?
+//Самый простой способ - это воспользоваться соответствующим селектором:
+console.log(document.querySelectorAll('#select option'));
+*/
+                    //Еще способ
+/*
+//Пусть у нас есть переменная, хранящая ссылку на селект:
+
+let select = document.querySelector('#select');
+//В таком случае поиск тегов option можно вести не по всему документу, а конкретно в нашем селекте:
+
+console.log(select.querySelectorAll('option'));
+*/
+                    //Продвинутый способ
+/*
+let select = document.querySelector('#select');
+
+for (let option of select) {
+	console.log(option);
+}
+*//*
+let select = document.querySelector('#select');
+console.log(select[0]);
+*//*
+let select = document.querySelector("#select");
+
+for(let option of select){
+    option.innerHTML += option.value;
+}
+*/
+                    //Работа с пунктами выпадающего списка на JavaScript
+/*
+let select = document.querySelector('#select');
+let option = select[0];
+
+console.log(option.text);
+console.log(option.value);
+console.log(option.selected);
+*//*
+let select = document.querySelector("#select");
+
+for(let option of select){
+    if(option.selected == true){
+        option.text += "!";
+    }else  {
+        option.text += "?";
+    }
+}
+*//*
+    //краткая форма записи
+for (var option of select) {
+    option.selected == true ? option.text += '!' : option.text += '?';
+}
+*/
+                //Выбор пункта списка
+/*
+let select = document.querySelector('#select');
+let option = select[2];
+option.selected = true;
+*//*
+let select = document.querySelector('#select');
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    select.lastElementChild.selected = true;  //lastElementShild !!!!!!!!
+});
+*/
+                //Получение выбранного оптиона
+/*
+let select = document.querySelector('#select');
+console.log(select[select.selectedIndex]);
+*//*
+let select = document.querySelector('#select');
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    alert(select[select.selectedIndex].text)
+});
+*//*
+let select = document.querySelector('#select');
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+    select[select.selectedIndex].text += "!";
+});
+*/
+                //Пользовательские атрибуты в JavaScript
+/*
+let elem = document.querySelector('#elem');
+alert(elem.dataset.num); // выведет 1000
+*//*
+let elem = document.querySelector('#elem');
+elem.dataset.num = 123;     //присвоили другое значение
+alert(elem.dataset.num);
+*//*
+let elem = document.querySelector("#elem");
+elem.addEventListener("click", function(){
+    elem.innerHTML += elem.dataset.text;
+    console.log(elem.dataset.text);
+});
+*//*
+let divs = document.querySelectorAll("div");
+
+for(let div of divs){
+    div.addEventListener("click", function func(){
+        this.innerHTML += this.dataset.num;
+        div.removeEventListener("click", func);
+    });
+}
+*//*
+let button = document.querySelector("#button");
+/*
+let sum = 0;
+button.addEventListener("click", function(){
+    sum += Number(button.dataset.num);
+    console.log(sum);
+})
+let sums = 0;
+button.addEventListener("dblclick", function(){
+    sums += sum;
+    alert(sums);
+});
+*//*
+button.addEventListener('click', function func() {
+    this.dataset.num++;
+});
+
+button.addEventListener('dblclick', function func() {
+    // двойной клик берется в общий счет как два одиночных клика, поэтому делаем поправку -2
+    alert(this.dataset.num - 2);
+});
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("blur", function(){
+    if(elem.value.length != elem.dataset.length){
+        alert("xyi")
+    }
+})
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("blur", function () {
+    if (elem.value.length < elem.dataset.min || elem.value.length > elem.dataset.max) {
+        alert("xyi")
+    }
+})
+*/
+                    //Пользовательские атрибуты с дефисами в JavaScript
+        //Для обращения к таким атрибутам следует использовать camelCase:
+/*
+let elem = document.querySelector('#elem');
+alert(elem.dataset.myTest);
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("click", function func(){
+    elem.innerHTML += elem.dataset.productPrice * elem.dataset.productAmount;
+    elem.removeEventListener("click", func);
+});
+*/
+                //Обращение через методы к data атрибутам в JavaScript
+        //getAttribute
+/*
+let elem = document.querySelector('#elem');
+
+alert(elem.getAttribute('data-num'));    // выведет 1000
+alert(elem.getAttribute('data-my-num')); // выведет 2000
+*//*
+let elems = document.querySelectorAll("#elem");
+let count = 0;
+
+for(let elem of elems){
+    elem.setAttribute("data-num", ++count)
+    console.log(elem.getAttribute("data-num"));
+}
+*/
+                //Основы работы с объектом Event в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+//elem.addEventListener('click', function() {
+//});
+
+elem.addEventListener('click', function (event) {
+    console.log(event); // увидим объект с событием
+});
+*/
+            //Свойство event.clientX
+        //event.clientX
+    //работает относительно окна, или экрана
+/*
+<div id="elem">0 : 0</div>
+let elem = document.getElementById('elem');
+
+document.addEventListener('mousemove', function (event) {
+    elem.innerHTML = event.clientX + ' : ' + event.clientY;
+});
+*/
+            //Свойство event.clientY
+        //event.clientY;
+    //работает относительно окна, или экрана
+/*
+let elem = document.getElementById('elem');
+
+document.addEventListener('mousemove', function(event) {
+	elem.innerHTML = event.clientX + ' : ' + event.clientY;
+});
+*/
+            //Свойство event.pageX
+        //event.pageX
+    //работает относительно окна страницы, документа
+/*
+let elem = document.getElementById('elem');
+
+document.addEventListener('mousemove', function(event) {
+	elem.innerHTML = event.pageX + ' : ' + event.pageY;
+});
+*/
+            //Свойство event.pageY
+        //event.pageY
+    //работает относительно окна страницы, документа
+/*
+let elem = document.getElementById('elem');
+
+document.addEventListener('mousemove', function(event) {
+	elem.innerHTML = event.pageX + ' : ' + event.pageY;
+});
+*/
+                //Тип события в объекте Event в JavaScript
+        //even.type
+//Объект Event также содержит в себе тип произошедшего события.
+//Под типом понимается название click, mouseover и так далее.
+//Тип события содержит свойство type:
+/*
+elem.addEventListener('click', function(event) {
+	console.log(event.type); // выведет 'click'
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', func);
+elem.addEventListener('dblclick', func);
+
+function func(event) {
+     event.type == 'click' ? elem.style.background = 'green' : 0;
+     event.type == 'dblclick' ? elem.style.background = 'red' : 0;
+}
+*/
+                //Элемент события в объекте Event в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function(event) {
+	console.log(event.target); // выведет наш абзац
+	console.log(this);         // выведет наш див
+});
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("click", function(event){
+    let tagName = event.target.tagName.toLowerCase();
+
+    if(tagName == "ul"){
+        let li = document.createElement("li");
+        li.innerHTML = elem.firstElementChild.innerHTML;
+        elem.appendChild(li);
+    }
+    tagName == "li" ? event.target.innerHTML +="!" : 0;
+});
+*/
+                    //Получение нажатых клавиш в JavaScript
+/*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+
+elem1.addEventListener("keydown", function(event){
+    if(event.code == "Enter"){
+        elem2.innerHTML += elem1.value;
+        elem1.value="";
+    }
+});
+*/
+                    //Отслеживание клавиш-модификаторов в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function(event) {
+	if (event.ctrlKey) {
+		alert('нажат Ctrl');
+	}
+
+	if (event.altKey) {
+		alert('нажат Alt');
+	}
+
+	if (event.shiftKey) {
+		alert('нажат Shift');
+	}
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener("click", function(event){
+    if(event.altKey == true){
+        elem.style.backgroundColor = "red";
+    }
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener("click", function(event){
+    //let tagName = event.target.tagName.toLowerCase();
+    if (event.ctrlKey){
+        event.target.innerHTML += 1;
+    }
+    if (event.shiftKey) {
+        event.target.innerHTML += 2;
+    }
+    if(event.ctrlKey || event.shiftKey){
+        event.target.style.color = "red";
+    }
+    //event.shiftKey || event.ctrlKey ? event.target.style.color = 'red' : 0;
+});
+*/
+                    //Отмена действия по умолчанию в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function(event) {
+	event.preventDefault();
+	alert('Вы не можете перейти по этой ссылке!');
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener("click", function(event){
+    elem.innerHTML += elem.href;
+    event.preventDefault();
+    alert('Вы не можете перейти по этой ссылке!');
+});
+*//*
+let inputs = document.querySelectorAll("input");
+let paragraph = document.querySelector("#paragraph");
+let link = document.querySelector("#link");
+let sum = 0;
+
+link.addEventListener("click", function(event){
+    event.preventDefault();
+    
+    for(let input of inputs){
+        sum += +input.value;
+    }
+    paragraph.innerHTML = +sum;
+    
+});
+*/
+                    //Основы работы с контекстом в JavaScript
+/*
+function func() {
+	console.log(this.value);
+}
+
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('blur', func);
+function func() {
+    console.log(this.value); // по потери фокуса выведет 'text'
+}
+*//*
+let elem1 = document.querySelector('#elem1');
+elem1.addEventListener('blur', func);
+
+let elem2 = document.querySelector('#elem2');
+elem2.addEventListener('blur', func);
+
+function func() {
+    console.log(this.value); // выведет или 'text1', или 'text2'
+}
+*/
+                    //Контекст непривязанной функции в JavaScript
+/*
+function func() {
+	console.log(this);
+}
+
+func();
+*/
+//Если режим НЕСТРОГИИ, то в this будет хранится ссылка на window:
+/*
+function func() {
+    console.log(this); // ссылка на окно window
+}
+
+func();
+*/
+//А если режим СТРОГИЙ, то в this будет хранится undefined:
+/*
+"use strict";
+
+function func() {
+    console.log(this); // undefined
+}
+
+func();
+*/
+                //Подводные камни
+//Из сказанного выше может показаться, что в строгом режиме this всегда будет undefined.Как бы не так!
+//Если просто вывести this вне функции, то в нем будет ссылка на window независимо от режима:
+/*
+"use strict";
+console.log(this); // в this ссылка на window
+*/
+//В любой функции можно написать this, это не приведет к каким - либо ошибкам JavaScript.
+//Но вот что именно будет лежать в этом this не определено до момента вызова функции.
+//Причем при разных вызовах функции this может принимать разное значение.
+//Все зависит от контекста, в котором была вызвана функция.
+                    
+                    //Потеря контекста в JavaScript
+/*
+function parent() {
+	function child() {
+
+	}
+}
+*//*
+function parent() {
+    let str = 'abcde'; //если задать переменную во внешнюю функцию, то она будет доступна
+                        // и во внутренней функций
+    function child() {
+        console.log(str); // выведет 'abcde'
+    }
+    child(); // вызываем внутреннюю функцию
+}
+
+parent(); // вызываем внешнюю функцию
+*//*
+"use strict";
+
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', parent);
+
+// Вызовется по потери фокуса:
+function parent() {
+    // тут будет какой-то код
+
+    function child() {
+        // тут будет какой-то код
+    }
+    child(); // вызываем дочернюю функцию
+}
+*//*
+"use strict";
+
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', parent);
+
+function parent() {
+    console.log(this); // выведет ссылку на наш инпут
+
+    function child() {
+        console.log(this); // выведет undefined
+    }
+    child();
+}
+//Когда this неожиданным для нас образом указывает не на то, что нам нужно, называется ПОТЕРЯ КОНТЕКСТА.
+*//*
+"use strict";
+
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', parent);
+
+function parent() {
+    console.log(this.value); // что выведет?
+
+    function child() {
+        console.log(this.value); // что выведет?
+    }
+    child();
+}
+*/
+                    //Решение проблемы с контекстом в JavaScript
+            //Первое решение проблемы
+/*
+"use strict";
+
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', parent);
+
+function parent() {
+    console.log(this.value); // выведет 'text'
+
+    let self = this; // запишем this в любую переменную, например, в self
+
+    function child() {
+        console.log(self.value); // выведет 'text'
+    }
+    child();
+}
+*//*
+"use strict";
+
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', func);
+
+function func() {
+    let self = this;
+    alert(square());
+    
+    function square() {
+        return self.value * self.value;
+    }
+}
+*/
+            //Второе решение проблемы
+//Сделаем так, чтобы функция child принимала параметр:
+//function child(param) {
+//    // тут будет код
+//}
+//А при вызове этой функции будем передавать в нее this:
+//function parent() {
+//    child(this); // передаем параметром this
+//
+//    function child(param) {
+//        // в переменной param лежит переданное содержимое this
+//    }
+//}
+/*
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', parent);
+
+function parent() {
+    child(this); // передаем параметром this
+
+    function child(param) {
+        console.log(param.value); // выводим value инпута
+    }
+}
+*//*
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', func);
+
+function func() {
+    //param = this;  //подсказка для тупых как я
+    alert(square(this));
+
+    function square(param) {
+        return param.value * param.value;
+    }
+}
+*/
+                //Третье решение проблемы
+        //стрелочные функции
+/*
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', parent);
+
+function parent() {
+	console.log(this.value); // выведет 'text'
+
+	let child = () => {
+		console.log(this.value); // выведет 'text'
+	}
+	child();
+}
+*//*
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', func);
+
+function func() {
+    
+    let square = () => {
+        return this.value * this.value;
+    }
+    alert(square()); //обязательно должно быть снизу
+}
+*/
+                //Привязывание контекста через метод call в JavaScript
+            //func.call(elem)
+        // функция.call(объект, который записать в this)
+/*
+let elem = document.querySelector('#elem');
+
+function func() {
+    console.log(this.value); // выведет value инпута
+}
+func.call(elem);
+*//*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let elem3 = document.querySelector("#elem3");
+
+function func(){
+    alert(this.value);
+}
+func.call(elem1);
+func.call(elem2);
+func.call(elem3);
+*//*
+let inputs = document.querySelectorAll("input");
+
+for(let input of inputs){
+    function func(){
+        console.log(input.value);
+    }
+}
+func.call(inputs);
+*/
+                    //Метод call с параметрами
+/*
+function func(param1, param2) {
+	console.log(this.value + param1 + param2);
+}
+
+func.call(elem, param1, param2);
+*//*
+let elem = document.querySelector('#elem');
+
+function func(surname, name) {
+    console.log(this.value + ', ' + surname + ' ' + name);
+}
+
+func.call(elem, "Иванов", "Иван"); // тут должно вывести 'привет, Иванов Иван'
+*/
+                    //Привязывание контекста через метод apply в JavaScript
+            //массив
+        //func.apply(elem, [param1, param2]);
+/*
+let elem = document.querySelector('#elem');
+
+function func(surname, name) {
+	console.log(this.value + ', ' + surname + ' ' + name);
+}
+
+func.apply(elem, ["Иванов", "Иван"]); // тут должно вывести 'привет, Иванов Иван'
+*/
+                    //Привязывание контекста через метод bind в JavaScript
+            //func = func.bind(elem);
+/*
+let elem = document.querySelector('#elem');
+
+function func(param1, param2) {
+	console.log(this.value + param1 + param2);
+}
+
+let newFunc = func.bind(elem);
+
+newFunc('1', '2');
+*//*
+let elem = document.getElementById('elem');
+
+function func(param1, param2) {
+    console.log(this.value + param1 + param2);
+}
+
+let newFunc = func.bind(elem);
+newFunc('1', '2'); // выведет 'text12'
+*/
+//Не обязательно записывать результат работы bind в новую функцию newFunc, 
+//можно просто перезаписать func.После этого func будет такой же функцией, 
+//как и была, но с жестко связанным this
+
+        //let func = func.bind(elem);
+/*
+let elem = document.getElementById('elem');
+
+function func(surname, name) {
+    console.log(this.value + ', ' + surname + ' ' + name);
+}
+
+// Тут напишите конструкцию с bind()
+//let newFunc = func.bind(elem);
+//newFunc("Иванов", "Иван")
+
+func = func.bind(elem); //без let, напишешь еще раз let перед функцией, у тебя сдохнет собака
+                    
+func('Иванов', 'Иван'); // тут должно вывести 'привет, Иванов Иван'
+func('Петров', 'Петр'); // тут должно вывести 'привет, Петров Петр'
+*/
+                    //Основы работы с функцией setInterval в JavaScript
+            //setInterval(timer, 1000);
+/*
+setInterval(timer, 1000);
+
+function timer() {
+	console.log('!');
+}
+*//*
+setInterval(function () {
+    console.log('!');
+}, 1000);
+*//*
+setInterval(function(){
+    alert("МДА!!!");
+}, 3000);
+*/
+                        //Счетчик через функцию setInterval в JavaScript
+/*
+let i = 0; // глобальная переменная
+
+setInterval(function() {
+	i++;
+	console.log(i);
+}, 1000);
+*/
+    //более компактный вариант
+/*
+let i = 0;
+setInterval(function() {
+	console.log(++i);
+}, 1000);
+*/
+    //еще компактнее, через => функцию
+/*
+let i = 0;
+setInterval(() => console.log(++i), 1000);
+*//*
+let i = 1000;
+
+setInterval (() => console.log(i--), 1000);
+*/
+                    //Остановка таймера JavaScript
+            //clearInterval  !!!!!!
+/*
+let timerId = setInterval(function() {
+	console.log('!')
+}, 1000);
+
+alert(timerId); // выведет номер таймера
+*//*
+let i = 0;
+
+let timerId = setInterval(function () {
+    console.log(++i);
+
+    if (i >= 10) {
+        clearInterval(timerId);
+    }
+}, 1000);
+*//*
+let i = 10;
+
+let timerId = setInterval(function(){
+    console.log(i--);
+
+    if(i <= 0){
+        clearInterval(timerId);
+    }
+}, 1000);
+*/
+                    //Кнопка для запуска таймера на JavaScript
+/*
+let start = document.querySelector('#start');
+
+start.addEventListener('click', function() {
+	let i = 0;
+
+	setInterval(function() {
+		console.log(++i);
+	}, 1000);
+});
+*//*
+let start = document.querySelector("#start");
+
+start.addEventListener("click", function func(){
+    let i = 100;
+
+    setInterval(function(){
+        console.log(i--);
+    }, 1000);
+    this.removeEventListener("click", func);
+});
+*/
+                    //Многократное нажатие на кнопку
+/*
+let start = document.querySelector('#start');
+
+start.addEventListener('click', function func() {
+	let i = 0;
+
+	setInterval(function() {
+		console.log(++i);
+	}, 1000);
+
+	this.removeEventListener('click', func); // отвязываем обработчик
+});
+*/
+                    //Кнопки для запуска и остановки таймера на JavaScript
+
+//let start = document.querySelector('#start');
+//let stop  = document.querySelector('#stop');
+/*
+let timerId; // сделаем переменную глобальной
+
+start.addEventListener('click', function () {
+    let i = 0;
+
+    let timerId = setInterval(function () {
+        console.log('!')
+    }, 1000);
+});
+
+// Останавливаем таймер:
+stop.addEventListener('click', function () {
+    clearInterval(timerId);
+});
+*//*
+let timerId; // сделаем переменную глобальной
+
+start.addEventListener('click', function () {
+    let i = 0;
+
+    timerId = setInterval(function () {
+        console.log('!')
+    }, 1000);
+});
+
+stop.addEventListener('click', function () {
+    clearInterval(timerId);
+});
+*//*
+let start = document.querySelector('#start');
+let stop  = document.querySelector('#stop');
+let timerId;
+
+start.addEventListener("click", function(){
+    let i = 100;
+
+    timerId = setInterval(function(){
+        console.log(i--);
+
+        if (i < 0) {
+            clearInterval(timerId);
+        }
+    }, 1000);
+});
+
+stop.addEventListener("click", function(){
+    clearInterval(timerId);
+});
+*//*
+let start = document.querySelector('#start');
+let stop = document.querySelector('#stop');
+let timerId;
+
+start.addEventListener('click', function () {
+    timerId = setInterval(function () {
+        let date = new Date;
+        console.log(date.getMinutes() + ' ' + date.getSeconds());
+    }, 1000);
+});
+
+stop.addEventListener('click', function () {
+    clearInterval(timerId);
+});
+*//*
+let start = document.querySelector('#start');
+let stop = document.querySelector('#stop');
+
+let timerId;
+
+start.addEventListener('click', function () {
+    timerId = setInterval(function () {
+        let date = new Date;
+        console.log(date.getMinutes() + ' ' + date.getSeconds());
+    }, 1000);
+});
+
+stop.addEventListener('click', function () {
+    clearInterval(timerId);
+});
+*//*
+let start = document.querySelector('#start');
+let stop = document.querySelector('#stop');
+
+let timerId;
+
+start.addEventListener('click', function () {
+    timerId = setInterval(function () {
+        let date = new Date;
+        console.log(date.getMinutes() + ' ' + date.getSeconds());
+    }, 1000);
+});
+
+stop.addEventListener('click', function () {
+    clearInterval(timerId);
+});
+*//*
+let start = document.querySelector('#start');
+let stop = document.querySelector('#stop');
+
+let timerId;
+
+start.addEventListener('click', function () {
+    timerId = setInterval(function () {
+        let date = new Date;
+        console.log(date.getMinutes() + ' ' + date.getSeconds());
+    }, 1000);
+});
+
+stop.addEventListener('click', function () {
+    clearInterval(timerId);
+});
+*//*
+let start = document.querySelector('#start');
+let stop = document.querySelector('#stop');
+let i = 100;
+let timerId; // сделаем переменную глобальной
+
+start.addEventListener('click', func);
+ 
+stop.addEventListener('click', function () {
+    clearInterval(timerId);
+    start.addEventListener("click", func);
+    
+});
+
+function func(){
+    timerId = setInterval(function(){
+        console.log(i--);
+        if(i <= 0){
+            clearInterval(timerId);
+        }
+    }, 1000);
+    this.removeEventListener("click", func);
+}
+*/
+                    //Практика на таймеры и работу с DOM в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+setInterval(function () {
+    elem.value = Number(elem.value) + 1;
+}, 1000);
+*//*
+let elem = document.querySelector('#elem');
+
+timerId = setInterval(function(){
+    elem.value = +elem.value - 1;
+    if(elem.value == 0){
+        clearInterval(timerId);
+    }
+}, 1000);
+*/
+                    //Таймеры и потеря контекста в JavaScript
+
+//let elem = document.querySelector('#elem');
+
+//elem.addEventListener('click', function () {
+//    setInterval(function () {
+//        console.log('!!!'); // что-нибудь выводим в консоль
+//    }, 1000);
+//});
+
+//elem.addEventListener('click', function () {
+//    setInterval(function () {
+//        console.log(this.value); // будет выводится undefined
+//    }, 1000);
+//});
+/*
+elem.addEventListener('click', function () {
+    let self = this;
+
+    setInterval(function () {
+        console.log(self.value); // исправим использя self
+    }, 1000);
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function () {
+    let self = this;
+
+    setInterval(function () {
+        self.value = Number(self.value) + 1;
+    }, 1000);
+});
+*/
+                        //Другие способы решить проблему
+/*
+elem.addEventListener('click', function () {
+    setInterval(() => console.log(this.value), 1000);
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener("click", function(){
+    setInterval(() => this.value = (Number(this.value) + 1), 1000);
+});
+*/
+                        //Решение проблемы через замыкание
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function () {
+    function func(self) {
+        return function () {
+            console.log(self.value);
+        }
+    }
+
+    setInterval(func(this), 1000);
+});
+*/
+//Можно вообще не использовать именованную функцию, а сделать вызов функции на месте.
+// этом случае мы получим более изящное, но менее понятное решение:
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function () {
+    setInterval((function (self) {
+        return function () {
+            console.log(self.value);
+        }
+    })(this), 1000);
+});
+*/
+                        //Передача контекста параметром функции setInterval
+/*
+function func(str1, str2) {
+	console.log(str1, str2);
+}
+
+setInterval(func, 1000, 'a', 'b');
+*//*
+setInterval(func, 1000, 'a', 'b');
+
+function func(str1, str2) {
+    console.log(str1, str2); // каждую секунду будет вводить 'a','b'
+}
+*/
+//Сделаем нашу функцию анонимной (компактнее, но менее очевидно):
+/*
+setInterval(function (str1, str2) {
+    console.log(str1, str2);
+}, 1000, 'a', 'b');
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function () {
+    setInterval(func, 1000, this); // параметром передаем this
+
+    function func(self) { // в self попадает this
+        console.log(self.value);
+    }
+});
+*/
+//Сделаем более компактное решение через анонимную функцию:
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function () {
+    setInterval(function (self) {
+        console.log(self.value);
+    }, 1000, this);
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function () {
+    setInterval(function (self) {
+        self.value--;
+    }, 1000, this);
+});
+*/
+                    //Практика на таймеры и работу с DOM в JavaScript
+/*
+let start = document.querySelector("#start");
+let elem = document.querySelector("#elem");
+
+start.addEventListener("click", function(){
+    setInterval(function(){
+        elem.innerHTML = +elem.innerHTML + 1;
+    }, 1000);
+});
+*//*
+let start = document.querySelector("#start");
+let elem = document.querySelector("#elem");
+
+start.addEventListener("click", function(){
+    timerId = setInterval(function(){
+        elem.innerHTML = + elem.innerHTML - 1;
+        if(elem.innerHTML <= 0){
+            clearInterval(timerId)
+        }
+    }, 1000);
+});
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("click", function(){
+    setInterval(function(){
+        elem.value **= 2;
+    }, 1000);
+});
+*//*
+let elem = document.querySelector("#elem");
+let paragraph = document.querySelector("#paragraph");
+
+elem.addEventListener("blur", function () {
+    paragraph.innerHTML +=elem.value;
+    timerId = setInterval(function () {
+        paragraph.innerHTML = +paragraph.innerHTML - 1;
+        if (paragraph.innerHTML <= 0){
+            clearInterval(timerId);
+        }
+    }, 1000);
+});
+*//*
+let elem = document.querySelector("#elem");
+let start = document.querySelector("#start");
+let paragraph = document.querySelector("#paragraph");
+
+start.addEventListener("click", function(){
+    paragraph.innerHTML += elem.value;
+    
+    timerId = setInterval(function(){
+        paragraph.innerHTML = +paragraph.innerHTML - 1;
+        if(paragraph.innerHTML <= 0){
+            clearInterval(timerId);
+        }
+    }, 1000);
+});
+*//*
+let paragraph = document.querySelector("#paragraph");
+let start = document.querySelector("#start");
+let stop = document.querySelector("#stop");
+
+start.addEventListener("click", function(){
+    timerId = setInterval(function(){
+        paragraph.innerHTML = +paragraph.innerHTML + 1;
+    }, 1000);
+});
+
+stop.addEventListener("click", function(){
+    clearInterval(timerId);
+});
+*//*
+let paragraph = document.querySelector("#paragraph");
+
+paragraph.addEventListener("click", function(){
+    setInterval(function(self){
+       if (paragraph.style.background == "green"){
+           paragraph.style.background = "red";
+       }else{
+           paragraph.style.background = "green";
+       }
+    }, 1000);
+});
+*//*
+let p = document.querySelector('#elem');
+setInterval(func, 1000);
+
+function func() {
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    p.innerHTML = addZero(hours) + ':' + addZero(minutes) + ':' + addZero(seconds);
+}
+
+function addZero(num) {
+    if (num >= 0 && num <= 9) {
+        return '0' + num;
+    } else {
+        return num;
+    }
+}
+*/
+                    //Функция setTimeout в JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function () {
+    setTimeout(function () {
+        alert('!');
+    }, 3000);
+});
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("click", function(){
+    setTimeout(function(){
+        elem.innerHTML = "мошки";
+    }, 10000);
+});
+*/
+                    //Запуск таймера
+/*
+let i = 0;
+
+setTimeout(function timer() {
+    console.log(++i);
+
+    timer(); // вызовем сами себя
+}, 3000);
+*//*
+let i = 0;
+
+setTimeout(function timer() {
+    console.log(++i);
+
+    if (i <= 10) { // запускаем, только если счетчик меньше 10
+        timer();
+    }
+}, 3000);
+*//*
+let i = 0;
+let sec = 1000;
+
+setTimeout(function timer(){
+    console.log(++i);
+
+    timer();
+}, sec + 1000);
+*/
+                    //Создание и вставка элементов на JavaScript
+/*
+let parent = document.querySelector('#parent');
+
+let p = document.createElement('p');
+p.innerHTML = '!';
+
+parent.appendChild(p);
+*//*
+let elem = document.querySelector("#elem");
+
+let li = document.createElement("li");
+li.innerHTML = "пункт";
+
+elem.appendChild(li);
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    let li = document.createElement("li");
+    li.innerHTML = "пункт";
+
+    elem.append(li);
+});
+*/
+                    //Привязывание событий при вставке элементов
+/*
+let parent = document.querySelector('#parent');
+
+let p = document.createElement('p');
+p.innerHTML = '!';
+
+p.addEventListener('click', function () {
+    alert(this.innerHTML); // по клику выведем текст абзаца
+});
+
+parent.appendChild(p);
+*//*
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+    let li = document.createElement("li");
+    li.innerHTML = "пункт";
+
+    elem.append(li);
+
+    li.addEventListener("click", function () {
+        this.innerHTML += "!";
+    });
+});
+*/
+                        //Создание элементов в цикле на JavaScript
+/*
+let parent = document.querySelector('#parent');
+
+for (let i = 1; i <= 9; i++) {
+    let p = document.createElement('p');
+    p.innerHTML = '!';
+
+    parent.appendChild(p);
+}
+*//*
+let elem = document.querySelector("#elem");
+let num = 1;
+
+for(let i = 1; i <= 10; i++){
+    let li = document.createElement("li");
+    li.innerHTML = num++
+
+    elem.appendChild(li);
+}
+*/
+                    //Навешивание обработчиков в цикле на JavaScript
+/*
+let parent = document.querySelector('#parent');
+
+for (let i = 1; i <= 9; i++) {
+    let p = document.createElement('p');
+    p.innerHTML = '!';
+
+    // Навешиваем обработчик клика:
+    p.addEventListener('click', function () {
+        alert(this.innerHTML);
+    });
+
+    parent.appendChild(p);
+}
+*//*
+let parent = document.querySelector('#parent');
+let paragraph = document.querySelector("#paragraph");
+
+for(let i = 1; i <= 5; i++){
+    let input = document.createElement("input");
+    input.innerHTML = "!"
+
+    input.addEventListener("blur", function(){
+        paragraph.innerHTML += input.value;
+    });
+    
+    parent.appendChild(input);
+}
+*/
+                    //Создание элементов из массива на JavaScript
+/*
+let parent = document.querySelector('#parent');
+
+let arr = [1, 2, 3, 4, 5];
+
+for (let elem of arr) {
+    let p = document.createElement('p');
+    p.innerHTML = elem;
+
+    p.addEventListener("click", function(){
+        p.innerHTML = +p.innerHTML + 1;
+    });
+
+    parent.appendChild(p);
+}
+*/
+                    //Практика на создание списков ul на JavaScript
+/*
+let list = document.querySelector("#list");
+let arr = [1, 2, 3, 4, 5];
+
+for (let elem of arr){
+    let li = document.createElement("li");
+    li.innerHTML = elem;
+
+    li.addEventListener("click", function func(){
+        li.innerHTML += "!";
+        li.removeEventListener("click", func); // по 1 ! знаку
+    });
+
+    list.appendChild(li);
+}
+*//*
+let elem = document.querySelector("#elem");
+let arr = [1, 2, 3, 4, 5];
+
+for(let i of arr){
+    let li = document.createElement("li");
+    li.innerHTML = i;
+
+    li.addEventListener("click", function func(){
+        li.innerHTML += "!";
+        alert(li.innerHTML);
+        li.removeEventListener("click", func);
+    })
+
+    elem.appendChild(li);
+}
+*/
+                    //Создание HTML таблиц на JavaScript
+/*
+let table = document.querySelector('#table');
+
+for (let i = 0; i < 3; i++) {
+    let tr = document.createElement('tr');
+    
+
+    for (let i = 0; i < 3; i++) {
+        let td = document.createElement('td');
+        tr.appendChild(td);
+        //td.innerHTML += "!"
+    }
+
+    table.appendChild(tr);
+}
+*//*
+let table = document.querySelector("#table");
 
 
+for (let i = 0; i < 10; i++){
+    let tr = document.createElement("tr");
+
+    for (let i = 0; i < 5; i++){
+        let td = document.createElement("td");
+        tr.appendChild(td);
+        td.innerHTML += "x";
+    }
+
+    table.appendChild(tr);
+}
+*//*
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let button = document.querySelector("#button");
+let table = document.querySelector("#table");
+
+button.addEventListener("click", function(){
+    
+    for(let i = 0; i < elem1.value; i++){
+        let tr = document.createElement("tr");
+
+        for(let i = 0; i < elem2.value; i++){
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            td.innerHTML += "x";
+        }
+
+        table.appendChild(tr);
+    }
+});
+*/
+                    //Последовательное заполнение HTML таблиц
+//Для начала давайте просто сделаем таблицу размером 3 на 3, заполненную буквами 'x':
+/*
+let table = document.querySelector('#table');
+
+for (let i = 0; i < 3; i++) {
+    let tr = document.createElement('tr');
+
+    for (let i = 0; i < 3; i++) {
+        let td = document.createElement('td');
+        td.innerHTML = 'x';
+        tr.appendChild(td);
+    }
+
+    table.appendChild(tr);
+}
+*/
+//теперь + счетчик
+/*
+let table = document.querySelector('#table');
+
+let k = 1; // начальное значение счетчика
+for (let i = 0; i < 3; i++) {
+    let tr = document.createElement('tr');
+
+    for (let i = 0; i < 3; i++) {
+        let td = document.createElement('td');
+
+        td.innerHTML = k; // записываем счетчик в ячейку
+        k++; // увеличиваем счетчик
+
+        tr.appendChild(td);
+    }
+
+    table.appendChild(tr);
+}
+*//*
+let table = document.querySelector('#table');
+let k = 0;
+
+for (let i = 0; i < 5; i++){
+    let tr = document.createElement("tr");
+
+    for(let i = 0; i < 5; i++){
+        let td = document.createElement("td");
+
+        k += 2;
+        td.innerHTML = k;
+        
+        tr.appendChild(td);
+    }
+    table.appendChild(tr);
+}
+*/
+                    //Создание HTML таблицы из массива на JavaScript
+/*
+let arr = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+];
+let table = document.querySelector('#table');
+
+for (let subArr of arr) {
+    let tr = document.createElement('tr');
+
+    for (let elem of subArr) {
+        let td = document.createElement('td');
+        td.innerHTML = elem;
+        tr.appendChild(td);
+    }
+
+    table.appendChild(tr);
+}
+*//*
+let arr = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [10, 11, 12]
+];
+let table = document.querySelector("#table");
+
+for(let subArr of arr){
+    let tr = document.createElement("tr");
+
+    for(let elem of subArr){
+        let td = document.createElement("td");
+        td.innerHTML = elem ** 2;
+        tr.appendChild(td);
+    }
+    table.appendChild(tr);
+}
+*/
+                    //Создание HTML таблицы из массива объектов
+/*
+let users = [{
+        name: 'name1',
+        surname: 'surname1',
+        patronymic: 'patronymic1'
+    },
+    {
+        name: 'name2',
+        surname: 'surname2',
+        patronymic: 'patronymic2'
+    },
+    {
+        name: 'name3',
+        surname: 'surname3',
+        patronymic: 'patronymic3'
+    },
+];
+
+let table = document.getElementById('table');
+
+for (let user of users) {
+    let tr = document.createElement('tr');
+
+    let td1 = document.createElement('td');
+    td1.innerHTML = user.name;
+    tr.appendChild(td1);
+
+    let td2 = document.createElement('td');
+    td2.innerHTML = user.surname;
+    tr.appendChild(td2);
+
+    let td3 = document.createElement('td');
+    td3.innerHTML = user.patronymic;
+    tr.appendChild(td3);
+
+    table.appendChild(tr);
+}
+*//*
+let employees = [{
+        name: 'employee1',
+        age: 30,
+        salary: 400
+    },
+    {
+        name: 'employee2',
+        age: 31,
+        salary: 500
+    },
+    {
+        name: 'employee3',
+        age: 32,
+        salary: 600
+    },
+];
+
+let table = document.querySelector("#table");
+
+for (let elem of employees) {
+    let tr = document.createElement("tr");
+
+    let td1 = document.createElement('td');
+    td1.innerHTML = elem.name;
+    tr.appendChild(td1);
+
+    let td2 = document.createElement('td');
+    td2.innerHTML = elem.age;
+    tr.appendChild(td2);
+    td2.addEventListener("click", function(){
+        td2.innerHTML++;
+    });
+
+    let td3 = document.createElement('td');
+    td3.innerHTML = elem.salary;
+    tr.appendChild(td3);
+    td3.addEventListener("click", function(){
+        td3.innerHTML *= 0.9
+    });
+
+    table.appendChild(tr);
+}
+*/
+                    //Добавление рядов и колонок в HTML таблицу
+/*
+let table = document.querySelector('#table');
+
+let tr = document.createElement('tr');
+
+for (let i = 1; i <= 3; i++) {
+    let td = document.createElement('td');
+    tr.appendChild(td);
+}
+
+table.appendChild(tr);
+*//*
+let table = document.querySelector('#table');
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function () {
+    let tr = document.createElement("tr");
+
+    for (let i = 1; i <= 5; i++) {
+        let td = document.createElement('td');
+        td.innerHTML = "x";
+        tr.appendChild(td);
+    }
+
+    table.appendChild(tr);
+});
+*/
+                    //Добавление колонок
+/*
+let trs = document.querySelectorAll('#table tr');
+
+for (let tr of trs) {
+	let td = document.createElement('td');
+	tr.appendChild(td);
+}
+*//*
+let trs = document.querySelector("#table tr");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    let tr = document.createElement("tr");
+
+    for (let i = 1; i <= 1; i++) {
+        let td = document.createElement('td');
+        tr.appendChild(td);
+
+        //for (let tr of trs) {
+       //     let td = document.createAttribute("td");
+           // tr.appendChild(td);
+       // }
+        table.appendChild(tr);
+    }
+});
+*//*
+let button = document.querySelector('button');
+let trs = document.querySelectorAll('#table tr');
+
+button.addEventListener('click', function () {
+    let tr = document.createElement('tr');
+    table.appendChild(tr);
+    // уже существующим рядам добавляется одно поле
+    for (var elem of trs) {
+        let td = document.createElement('td');
+        td.innerHTML = 'a';
+        elem.appendChild(td);
+    }
+    // созданный ряд заполняется ячейками
+    for (let i = 0; i < trs.length + 1; i++) {
+        let td = document.createElement('td');
+        td.innerHTML = 'z';
+        tr.appendChild(td);
+    }
+})
+*/
+                    //Изменение ячеек HTML таблицы на JavaScript
+/*
+let tds = document.querySelectorAll('#table td');
+
+for (let td of tds) {
+	td.innerHTML = '!';
+}
+*//*
+let tds = document.querySelectorAll("#table td");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    for(let td of tds){
+        td.innerHTML = td.innerHTML ** 2;
+    }
+});
+*/
+                    //Порядковый номер ячейки таблицы на JavaScript
+    //обычный for
+/*
+let tds = document.querySelectorAll('#table td');
+
+for (let i = 0; i < tds.length; i++) {
+	tds[i].innerHTML = i + 1;
+}
+*/
+    //for of
+/*
+let tds = document.querySelectorAll('#table td');
+
+let i = 1;
+for (let td of tds) {
+	td.innerHTML = i;
+	i++;
+}
+*/
+    //короткии for of
+/*
+let tds = document.querySelectorAll('#table td');
+
+let i = 1;
+for (let td of tds) {
+	td.innerHTML = i++;
+}
+*//*
+let tds = document.querySelectorAll("#table td");
+
+for (let i = tds.length, j = 0; i > 0; i--, j++){
+    tds[j].innerHTML = i;
+}
+*//*
+let tds = document.querySelectorAll("#table td");
+
+let i = tds.length;
+for(let td of tds){
+    td.innerHTML = i--;
+}
+*/
+                    //Номер колонки и ряда таблицы на JavaScript
+    // найдем все ряды таблицы и переберем их циклом
+/*
+let trs = document.querySelectorAll('#table tr');
+
+for (let i = 0; i < trs.length; i++) {
+	let tr = trs[i]; // запишем каждый ряд в переменную
+	console.log(tr);
+}
+*/
+//Давайте теперь найдем ячейки каждого из рядов.Для этого используем метод 
+//querySelectorAll, только применим его не к document, а к переменной tr, 
+//выполнив таким образом поиск ячеек в конкретном ряду:
+/*
+let trs = document.querySelectorAll('#table tr');
+
+for (let i = 0; i < trs.length; i++) {
+	let tr = trs[i];
+
+	let tds = tr.querySelectorAll('td'); // найдем ячейки ряда
+	console.log(tds);
+}
+*/
+    //Давайте теперь переберем полученные ячейки циклом:
+/*
+let trs = document.querySelectorAll('#table tr');
+
+for (let i = 0; i < trs.length; i++) {
+	let tr = trs[i];
+	let tds = tr.querySelectorAll('td');
+
+	for (let j = 0; j < tds.length; j++) {
+		let td = tds[j];
+		console.log(td);
+	}
+}
+*/
+    //Запишем теперь в текст ячейки номер ее ряда (переменную i) и номер ее колонки (переменную j):
+/*
+let trs = document.querySelectorAll('#table tr');
+
+for (let i = 0; i < trs.length; i++) {
+	let tr = trs[i];
+	let tds = tr.querySelectorAll('td');
+
+	for (let j = 0; j < tds.length; j++) {
+		let td = tds[j];
+		td.innerHTML = i + '.' + j;
+	}
+}
+*//*
+let trs = document.querySelectorAll("#table tr");
+
+for(let i = 0; i < trs.length; i++){
+    let tr = trs[i];
+    let tds = tr.querySelectorAll("td");
+
+    for(let j = 0; j < tds.length; j++){
+        let td = tds[j];
+        td.innerHTML = i + ":" + j;
+    }
+}
+*/
+                    //Порядковый номер ячейки по клику на JavaScript
+/*
+let tds = document.querySelectorAll('#table td');
+
+for (let i = 0; i < tds.length; i++) {
+	tds[i].addEventListener('click', function() {
+		this.innerHTML = i;
+	});
+}
+*/
+                    //Порядковый номер клика в ячейке HTML таблицы
+/*
+let tds = document.querySelectorAll('#table td');
+
+let i = 1;
+for (let td of tds) {
+	td.addEventListener('click', function func() {
+		this.innerHTML = i;
+        i++;
+    td.removeEventListener("click", func)
+	});
+}
+*/
+                    //Чередование
+/*
+let tds = document.querySelectorAll('#table td');
+
+let i = 1;
+for (let td of tds) {
+	td.addEventListener('click', function() {
+		this.innerHTML = i;
+
+		if (i == 1) {
+			i = 2;
+		} else  {
+			i = 1;
+		}
+	});
+}
+*//*
+let tds = document.querySelectorAll('#table td');
+
+let i = 1;
+for (let td of tds) {
+    td.addEventListener('click', function () {
+        this.innerHTML = i;
+
+        if (i == 1) {
+            i = 2;
+        } else if (i == 2) {
+            i = 3;
+        } else {
+            i = 1;
+        }
+    });
+}
+*/
+                    //Удаление элементов на JavaScript
+/*
+let parent = document.querySelector('#parent');
+let elem   = document.querySelector('#elem');
+
+parent.removeChild(elem);
+*//*
+let parent = document.querySelector("#parent");
+let elem = document.querySelector("#elem");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    parent.removeChild(elem);
+});
+*//*
+let parent = document.querySelector("#parent");
+let button = document.querySelector("#button");
+let li = document.querySelectorAll("li");
+
+button.addEventListener("click", function(){
+    let elem = parent.lastElementChild;  // !!!!!!!!!
+    parent.removeChild(elem);
+});
+*/
+                    //Без родителя
+            //parentElement
+/*
+let elem = document.querySelector('#elem');
+elem.parentElement.removeChild(elem);
+*//*
+let elem = document.querySelector("#elem");
+elem.parentElement.removeChild(elem);
+*/
+                    //Самоудаление элементов на JavaScript
+/*
+let parent = document.querySelector('#parent');
+let elems  = document.querySelectorAll('#parent p');
+
+for (let elem of elems) {
+	elem.addEventListener('click', function() {
+		parent.removeChild(this);
+	});
+}
+*//*
+let parent = document.querySelector("#parent");
+let elems = document.querySelectorAll("#parent li");
+
+for(let elem of elems){
+    elem.addEventListener("click", function(){
+        parent.removeChild(this);
+    });
+}
+*/
+                    //Самоудаление новых элементов на JavaScript
+/*
+let parent = document.querySelector('#parent');
+
+for (let i = 1; i <= 9; i++) {
+    let p = document.createElement('p');
+    p.innerHTML = i;
+
+    p.addEventListener('click', function () {
+        parent.removeChild(this);
+    });
+
+    parent.appendChild(p);
+}
+*//*
+let parent = document.querySelector("#parent");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    let li = document.createElement("li");
+    li.innerHTML = Number(parent.lastElementChild.innerHTML) + 1;
+    parent.appendChild(li);
+
+    let elems = document.querySelectorAll("#parent li");
+
+    for (elem of elems){
+        elem.addEventListener("click", function(){
+            parent.removeChild(this);
+        });
+    }
+});
+*/
+                    //Ссылка на удаление элемента на JavaScript
+                //предотвратить переход по ссылке с помощью preventDefault:
+            //preventDefault
+/*
+let elem = document.querySelector('#elem');
+let remove = document.querySelector('#remove');
+
+remove.addEventListener('click', function () {
+    elem.parentElement.removeChild(elem);
+});
+*//*
+let elem = document.querySelector('#elem');
+let remove = document.querySelector('#remove');
+
+remove.addEventListener('click', function (event) {
+    elem.parentElement.removeChild(elem);
+    event.preventDefault(); // отменяем переход по ссылке
+});
+*/
+                    //Создание ссылок для удаление элементов на JavaScript
+    //добавление ссылок:
+/*
+let elems = document.querySelectorAll('#parent p');
+
+for (let elem of elems) {
+    let remove = document.createElement('a');
+    remove.href = '';
+    remove.innerHTML = 'remove';
+
+    elem.appendChild(remove);
+}
+*/
+    //Давайте теперь сделаем так, чтобы по нажатию на ссылку, удалялся соответствующий ей абзац:
+/*
+let elems = document.querySelectorAll('#parent p');
+
+for (let elem of elems) {
+    let remove = document.createElement('a');
+    remove.href = '';
+    remove.innerHTML = 'remove';
+    elem.appendChild(remove);
+
+    remove.addEventListener('click', function (event) {
+        elem.parentElement.removeChild(elem);
+        event.preventDefault();
+    });
+}
+*//*
+let elems = document.querySelectorAll("#parent li");
+
+for(let elem of elems){
+    let remove = document.createElement("a");
+    remove.href = "";
+    remove.innerHTML = "remove";
+    elem.appendChild(remove);
+
+    remove.addEventListener("click", function(event){
+        elem.parentElement.removeChild(elem);
+        event.preventDefault();
+    });
+}
+*//*
+let trs = document.querySelectorAll('#table tr');
+
+for (let tr of trs) {
+    let td = document.createElement('td');
+    td.href = "";
+    td.innerHTML = "remove";
+    tr.appendChild(td);
+
+    td.addEventListener("click", function(event){
+        td.parentElement.removeChild(td);
+        //event.preventDefault();
+    });
+}
+*//*
+let elems = document.querySelectorAll('#parent li');
+
+for (let elem of elems) {
+    let remove = document.createElement('a');
+    remove.href = '';
+    remove.innerHTML = 'remove';
+    elem.appendChild(remove);
+
+    remove.addEventListener('click', function (event) {
+        elem.parentElement.removeChild(elem);
+        event.preventDefault();
+    });
+}
+*/
+                        //Редактирование отдельного элемента на JavaScript
+/*
+let elem = document.querySelector('#elem');
+let input = document.querySelector('#input');
+
+input.addEventListener('blur', function() {
+	elem.innerHTML = this.value;
+});
+*//*
+let elem = document.querySelector('#elem');
+let input = document.querySelector('#input');
+
+input.value = elem.innerHTML; // записываем в инпут текст абзаца
+
+input.addEventListener('input', function () {  //input - сразу при вводе меняет текст
+    elem.innerHTML = this.value;
+});
+*/
+                    //Появление инпута
+        //Для начала просто реализуем появление инпута, без редактирования:
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function() {
+	let input = document.createElement('input');
+	input.value = elem.innerHTML;
+
+	elem.parentElement.appendChild(input);
+});
+*/
+        //А теперь давайте сделаем так, чтобы по потери фокуса в инпуте менялся текст абзаца:
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function() {
+	let input = document.createElement('input');
+	input.value = elem.innerHTML;
+
+	input.addEventListener('blur', function() {
+		elem.innerHTML = this.value;
+	});
+
+	elem.parentElement.appendChild(input);
+});
+*/
+        //Наш код, однако, несовершенен, так как каждое нажатие на абзац будет приводить к появлению нового инпута.
+        //Для решения проблемы просто будем по потери фокуса удалять текущий инпут:
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function() {
+	let input = document.createElement('input');
+	input.value = elem.innerHTML;
+
+	input.addEventListener('blur', function() {
+		elem.innerHTML = this.value;
+		this.parentElement.removeChild(this); // удалим инпут
+	});
+
+	elem.parentElement.appendChild(input);
+});
+*/
+                //Прячем текст при редактировании элемента на JavaScript
+/*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function() {
+	let input = document.createElement('input');
+	input.value = elem.innerHTML;
+
+	elem.appendChild(input);
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function func() {
+    let input = document.createElement('input');
+    input.value = elem.innerHTML;
+
+    elem.appendChild(input);
+
+    elem.removeEventListener('click', func); // отвяжем событие
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function func() {
+    let input = document.createElement('input');
+
+    input.value = elem.innerHTML; // сначала записываем текст абзаца в инпут
+    elem.innerHTML = ''; // затем убираем текст абзаца
+    elem.appendChild(input); // затем вставляем инпут
+
+    elem.removeEventListener('click', func);
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function func() {
+    let input = document.createElement('input');
+
+    input.value = elem.innerHTML;
+    elem.innerHTML = '';
+    elem.appendChild(input);
+
+    input.addEventListener('blur', function () {
+        elem.innerHTML = this.value;
+    });
+
+    elem.removeEventListener('click', func);
+});
+*//*
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function func() {
+    let input = document.createElement('input');
+    input.value = elem.innerHTML;
+
+    elem.innerHTML = '';
+    elem.appendChild(input);
+
+    input.addEventListener('blur', function () {
+        elem.innerHTML = this.value;
+        elem.addEventListener('click', func); // повесим событие обратно
+    });
+
+    elem.removeEventListener('click', func);
+});
+*//*
+let elem = document.querySelector("#elem");
+
+elem.addEventListener("click", function func(){
+    let input = document.createElement("input");
+    input.value = elem.innerHTML;
+
+    elem.value = "";
+    elem.appendChild(input);
+
+    input.addEventListener("blur", function(){
+        elem.innerHTML = this.value;
+        elem.addEventListener("click", func)
+    });
+
+    elem.removeEventListener("click", func);
+});
+*/
+                    //Редактирование в группе элементов на JavaScript
+/*
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+	elem.addEventListener('click', function func() {
+		let input = document.createElement('input');
+		input.value = elem.innerHTML;
+
+		elem.innerHTML = '';
+		elem.appendChild(input);
+
+		input.addEventListener('blur', function() {
+			elem.innerHTML = this.value;
+			elem.addEventListener('click', func);
+		});
+
+		elem.removeEventListener('click', func);
+	});
+}
+*//*
+let elems = document.querySelectorAll("#table li");
+
+for(let elem of elems){
+    elem.addEventListener("click", function func(){
+        let input = document.createElement('input');
+        input.value = elem.innerHTML;
+
+        elem.innerHTML = "";
+        elem.appendChild(input);
+
+        input.addEventListener("blur", function(){
+            elem.innerHTML = this.value;
+            elem.addEventListener("click", func);
+        });
+
+        elem.removeEventListener("click", func);
+    });
+}
+*//*
+let elems = document.querySelectorAll("#table td");
+
+for(let elem of elems){
+    elem.addEventListener("click", function func(){
+        let input = document.createElement("input");
+        input.value = elem.innerHTML;
+
+        elem.innerHTML = "";
+        elem.appendChild(input);
+
+        input.addEventListener("blur", function(){
+            elem.innerHTML = this.value;
+            elem.addEventListener("click", func);
+        });
+
+        elem.removeEventListener("click", func);
+    });
+}
+*/
+                    //Одновременное редактирование и удаление элементов
+/*
+let elems = document.querySelectorAll("#parent span");
+let links = document.querySelectorAll("parent p");
+
+for(let link of links){
+    let remove = document.createElement('a');
+    remove.href = '';
+    remove.innerHTML = 'remove';
+    link.appendChild(remove);
+
+    remove.addEventListener('click', function (event) {
+        link.parentElement.removeChild(link);
+        event.preventDefault();
+    });
+}
+
+for(let elem of elems){
+    elem.addEventListener("click", function func(){
+        let input = document.createElement("input");
+        input.value = elem.innerHTML;
+
+        elem.innerHTML = "";
+        elem.appendChild(input);
+
+        input.addEventListener("blur", function(){
+            elem.innerHTML = this.value;
+            elem.addEventListener("click", func);
+        });
+
+        elem.removeEventListener("click", func);
+    });
+}
+*//*
+let paragraphs = document.querySelectorAll('#parent p');
+let elems = document.querySelectorAll('#parent span');
+
+for (let paragraph of paragraphs) {
+    let remove = document.createElement('a');
+    remove.href = '';
+    remove.innerHTML = 'remove';
+    paragraph.appendChild(remove);
+
+    remove.addEventListener('click', function (event) {
+        paragraph.parentElement.removeChild(paragraph);
+        event.preventDefault();
+    });
+}
+
+for (let elem of elems) {
+    elem.addEventListener('click', function func() {
+        elem.removeEventListener('click', func); // отвяжем событие
+
+        let input = document.createElement('input');
+        input.value = elem.innerHTML; // сначала записываем текст абзаца в инпут
+        elem.innerHTML = ''; // затем убираем текст абзаца
+        elem.appendChild(input); // затем вставляем инпут
+
+        input.addEventListener('blur', function () {
+            elem.innerHTML = this.value;
+            elem.addEventListener('click', func); // повесим событие обратно
+        });
+    });
+}
+*//*
+let paragraphs = document.querySelectorAll('#parent p');
+
+for (let paragraph of paragraphs) {
+    let span = document.createElement('span');
+    span.innerHTML = paragraph.innerHTML;
+    paragraph.innerHTML = '';
+    paragraph.appendChild(span);
+
+    let remove = document.createElement('a');
+    remove.href = '';
+    remove.innerHTML = 'remove';
+    paragraph.appendChild(remove);
+
+    remove.addEventListener('click', function (event) {
+        paragraph.parentElement.removeChild(paragraph);
+        event.preventDefault();
+    });
+
+    span.addEventListener('click', function func() {
+        
+        let input = document.createElement('input');
+        input.value = this.innerHTML; // сначала записываем текст абзаца в инпут
+        span.innerHTML = ''; // затем убираем текст абзаца
+        span.appendChild(input); // затем вставляем инпут
+
+        input.addEventListener('blur', function () {
+            span.innerHTML = this.value;
+            span.addEventListener('click', func); // повесим событие обратно
+        });
+
+        this.removeEventListener('click', func); // отвяжем событие
+    });
+}
+*//*
+let paragraphs = document.querySelectorAll('p');
+console.log(paragraphs);
+
+for (let paragraph of paragraphs) {
+    let span = document.createElement('span');
+    span.innerHTML = paragraph.innerHTML;
+    paragraph.innerHTML = '';
+    paragraph.appendChild(span);
+
+    let link = document.createElement('a');
+    link.href = '';
+    link.innerHTML = 'link';
+    paragraph.appendChild(link);
+
+    link.addEventListener('click', function (event) {
+        span.classList.add('aaa');
+        event.preventDefault();
+        link.parentElement.removeChild(link);
+    });
+
+}
+*//*
+let tables = document.querySelectorAll("#table tr");
+console.log(table);
+
+for (let tr of tables) {
+    let td = document.createElement('td');
+    let a = document.createElement("a");
+    a.href = "";
+    a.innerHTML = "color";
+    td.appendChild(a);
+    tr.appendChild(td);
+
+    a.addEventListener("click", function func(event){
+        tr.classList.add('bbb');
+        event.preventDefault();
+        a.removeEventListener("click", func);
+    })
+}
+*/
+                        //Кнопки для скрытия и показа элемента на JavaScript
+/*
+let elem = document.querySelector('#elem');
+let show = document.querySelector('#show');
+//let hide = document.querySelector('#hide');
+/*
+hide.addEventListener('click', function () {
+    elem.classList.add('hidden');
+});
+
+show.addEventListener('click', function () {
+    elem.classList.remove('hidden');
+});
+
+show.addEventListener("click", function(){
+    elem.classList.toggle("hidden");
+})
+*/
+                    //Много элементов с кнопками показа на JavaScript
+            //Первый способ
+/*
+let buttons = document.querySelectorAll('button');
+
+for (let button of buttons) {
+    button.addEventListener('click', function () {
+        let elem = document.querySelector('#' + this.dataset.elem);
+        elem.classList.toggle('hidden');
+    });
+}
+*/
+            //Второй способ
+    //Расставлять id и data-атрибуты не очень удобно. Давайте сделаем так, чтобы связь была по 
+    //порядковому номеру: пусть первая кнопка скрывает первый абзац, вторая кнопка - второй и так далее.
+/*
+let buttons = document.querySelectorAll('button');
+let elems = document.querySelectorAll('p');
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function () {
+        elems[i].classList.toggle('hidden');
+    });
+}
+*/
+            //Третий способ
+    //Как можно увидеть, абзац, связанный с кнопкой, является ее соседом слева. Можно это использовать в качестве связи:
+/*
+let buttons = document.querySelectorAll('button');
+
+for (let button of buttons) {
+    button.addEventListener('click', function () {
+        this.previousElementSibling.classList.toggle('hidden');
+    });
+}
+*/
+                        //Активация элементов на JavaScript
+/*
+let tds = document.querySelectorAll('#table td');
+
+for (let td of tds) {
+    td.addEventListener('click', function () {
+        this.classList.add('active');
+    });
+}
+*//*
+let lis = document.querySelectorAll("#table li");
+
+for(let li of lis){
+    li.addEventListener("click", function(){
+        this.classList.toggle("active");
+    });
+}
+*/
+                    //Чередование стилей активации на JavaScript
+/*
+let tds = document.querySelectorAll('#table td');
+
+let color = 'color1';
+for (let td of tds) {
+    td.addEventListener('click', function () {
+        if (color == 'color1') {
+            color = 'color2'
+        } else {
+            color = 'color1'
+        }
+
+        this.classList.add(color);
+    });
+}
+*/
+                //Чередование многих цветов из массива
+/*
+let tds = document.querySelectorAll('#table td');
+
+let i = 0;
+let colors = ['color1', 'color2', 'color3'];
+
+for (let td of tds) {
+    td.addEventListener('click', function () {
+        this.classList.add(colors[i]);
+
+        i++;
+        if (i == colors.length) {
+            i = 0;
+        }
+    });
+}
+*/
+                //Активация ограниченного количества элементов
+/*
+let tds = document.querySelectorAll('#table td');
+
+for (let td of tds) {
+    td.addEventListener('click', function () {
+        let activeTds = document.querySelectorAll('#table td.active');
+
+        if (activeTds && activeTds.length < 3) {
+            this.classList.add('active');
+        }
+    });
+}
+*//*
+let tds = document.querySelectorAll("#table td");
+
+for(let td of tds){
+    td.addEventListener("click", function(){
+        let activeTds = document.querySelectorAll("table td.active");
+
+        if(activeTds && activeTds.length < 5){
+            this.classList.add("active");
+        }
+    });
+}
+*//*
+let trs = document.querySelectorAll('table tr');
+let tds = document.querySelectorAll('table td');
+
+for (let td of tds) {
+    td.addEventListener('click', function () {
+        let i = this.parentElement.rowIndex;
+        let activeTds = trs[i].querySelectorAll('table td.active');
+
+        if (activeTds && activeTds.length < 5) {
+            this.classList.add('active');
+            this.classList.previousElementSibling.add("active")
+        }
+    });
+}
+*/
+                    //Практика на изменение элементов на JavaScript
+/*
+let table = document.querySelector("#table");
+let arr = ["1", "2", "3", "4"];
+let inputAddLi = document.querySelector("#inputAddLi");
+let lis = document.querySelectorAll("#table li");
+
+for (let elem of arr) {
+    let li = document.createElement("li");
+    li.innerHTML = elem;
+
+    //инпуты на таблице
+    //li.addEventListener("click", function func(){
+    //    let input = document.createElement("input");
+    //
+    //    input.value = li.innerHTML;
+    //    li.innerHTML = "";
+    //    li.appendChild(input);
+    //
+    //    input.addEventListener("blur", function(){
+    //        li.innerHTML = this.value;
+    //       li.addEventListener("click", func);
+    //    });
+    //
+    //    li.removeEventListener("click", func);
+    //});
+
+    //обернул в спан
+    let span = document.createElement("span");
+    span.innerHTML = li.innerHTML;
+    li.innerHTML = "";
+    
+    span.addEventListener("click", function func() {
+        let input = document.createElement("input");
+
+        input.value = span.innerHTML;
+        span.innerHTML = "";
+        span.appendChild(input);
+        //li.appendChild(input);
+
+        input.addEventListener("blur", function(){
+            span.innerHTML = this.value;
+            span.addEventListener("click", func);
+        });
+        
+        span.removeEventListener("click", func);
+    });
+
+    //а вот теперь надо думать над кнопкой удаления петушинной головы
+    let remove = document.createElement("a");
+    remove.href = "";
+    remove.innerHTML = "remove";
+    
+    remove.addEventListener("click", function(event){
+        li.parentElement.removeChild(li);
+        event.preventDefault();
+    });
+
+    //ссылка на перечеркивание элемента
+    let link = document.createElement("a");
+    link.href = "";
+    link.innerHTML = "link";
+
+    link.addEventListener('click', function (event) {
+        span.classList.add('aaa');
+        event.preventDefault();
+        link.parentElement.removeChild(link);
+    });
 
 
+    li.appendChild(span);
+    table.appendChild(li);
+    li.appendChild(remove);
+    li.appendChild(link);
+}
+
+  //тут код на инпут с вводом для доп li
+
+inputAddLi.addEventListener("blur", function func(){
+    let li = document.createElement("li");
+    li.innerHTML = inputAddLi.value;
+
+    let span = document.createElement("span");
+    span.innerHTML = li.innerHTML;
+    li.innerHTML = "";
+
+    //обернул li в span и добавил input для редактирования
+    span.addEventListener("click", function func(){
+        let input = document.createElement("input");
+        input.value = span.innerHTML;
+        span.innerHTML = "";
+        span.appendChild(input);
+
+        input.addEventListener("blur", function () {
+            span.innerHTML = this.value;
+            span.addEventListener("click", func);
+        });
+
+        span.removeEventListener("click", func);
+    });
+
+    //ссылка на удаление доп li
+    let remove = document.createElement("a");
+    remove.href = "";
+    remove.innerHTML = 'remove';
+
+    remove.addEventListener('click', function (event) {
+        li.parentElement.removeChild(li);
+        event.preventDefault();
+    });
+
+    li.removeEventListener("click", func);
+
+    //ссылка на перечеркивание 
+    let link = document.createElement("a");
+    link.href = "";
+    link.innerHTML = "link";
+
+    link.addEventListener('click', function (event) {
+        span.classList.add('aaa');
+        event.preventDefault();
+        link.parentElement.removeChild(link);
+    });
+    
+    li.appendChild(span);
+    table.appendChild(li);
+    li.appendChild(remove);
+    li.appendChild(link);
+});
+*/
+/* ********************************************** */
+/*
+let employees = [{
+        name: 'employee1',
+        age: 30,
+        salary: 400
+    },
+    {
+        name: 'employee2',
+        age: 31,
+        salary: 500
+    },
+    {
+        name: 'employee3',
+        age: 32,
+        salary: 600
+    },
+];
+
+let table = document.getElementById('table');
+let elem1 = document.querySelector("#elem1");
+let elem2 = document.querySelector("#elem2");
+let elem3 = document.querySelector("#elem3");
+//let elem = document.querySelectorAll("#elem");
+let button = document.querySelector("#button");
+
+for (let employee of employees) {
+    let tr = document.createElement('tr');
+
+    let td1 = document.createElement('td');
+    td1.innerHTML = employee.name;
+    tr.appendChild(td1);
+
+    //редактирование 1 столбика
+    td1.addEventListener("click", function func() {
+        let input = document.createElement("input");
+        input.value = td1.innerHTML;
+        td1.innerHTML = "";
+        td1.appendChild(input);
+
+        input.addEventListener("blur", function () {
+            td1.innerHTML = this.value;
+            td1.addEventListener("click", func);
+        });
+
+        td1.removeEventListener("click", func);
+    });
+
+    let td2 = document.createElement('td');
+    td2.innerHTML = employee.age;
+    tr.appendChild(td2);
+
+    //редактирование 2 столбика
+     td2.addEventListener("click", function func() {
+         let input = document.createElement("input");
+         input.value = td2.innerHTML;
+         td2.innerHTML = "";
+         td2.appendChild(input);
+
+         input.addEventListener("blur", function () {
+             td2.innerHTML = this.value;
+             td2.addEventListener("click", func);
+         });
+
+         td2.removeEventListener("click", func);
+     });
+
+    let td3 = document.createElement('td');
+    td3.innerHTML = employee.salary;
+    tr.appendChild(td3);
+
+    //редактирование 3 столбика
+     td3.addEventListener("click", function func() {
+         let input = document.createElement("input");
+         input.value = td3.innerHTML;
+         td3.innerHTML = "";
+         td3.appendChild(input);
+
+         input.addEventListener("blur", function () {
+             td3.innerHTML = this.value;
+             td3.addEventListener("click", func);
+         });
+
+         td3.removeEventListener("click", func);
+     });
+
+
+    //добавление новой колонки
+    let td = document.createElement("td");
+    tr.appendChild(td);
+    let remove = document.createElement("a");
+    remove.href = "";
+    remove.innerHTML = "remove";
+    
+    remove.addEventListener("click", function(event){
+        tr.parentElement.removeChild(tr);
+        event.preventDefault();
+    });
+
+    td.appendChild(remove);
+    table.appendChild(tr);
+}
+
+    //пытаюсь добавить нового работягу(up)
+button.addEventListener("click", function () {
+    let tr = document.createElement('tr');
+
+    let td1 = document.createElement("td");
+    td1.innerHTML = elem1.value;
+    tr.appendChild(td1);
+
+    let td2 = document.createElement("td");
+    td2.innerHTML = elem2.value;
+    tr.appendChild(td2);
+
+    let td3 = document.createElement("td");
+    td3.innerHTML = elem3.value;
+    tr.appendChild(td3);
+
+    let td = document.createElement("td");
+    tr.appendChild(td);
+    let remove = document.createElement("a");
+    remove.href = "";
+    remove.innerHTML = "remove";
+
+    remove.addEventListener("click", function (event) {
+        tr.parentElement.removeChild(tr);
+        event.preventDefault();
+    });
+
+    td.appendChild(remove);
+
+    table.appendChild(tr);
+});
+*/
+
+
+/* //без цикла добавляет 1 элемент
+button.addEventListener("click", function(){
+    let tr = document.createElement('tr');
+        let td = document.createElement("td");
+        td.innerHTML = elem.value;
+        tr.appendChild(td);
+    table.appendChild(tr);
+});
+*/
+/* ************************ 3 задача смотреть лучше редактирование salary******************************** */
+/*
+let link = document.querySelector("#link");
+let employees = [{
+        name: 'employee1',
+        age: 30,
+        salary: 400
+    },
+    {
+        name: 'employee2',
+        age: 31,
+        salary: 500
+    },
+    {
+        name: 'employee3',
+        age: 32,
+        salary: 600
+    },
+];
+
+    //хз, только через 3 цикла смог придумать хоть какой то список
+for (let employee of employees) {
+    let li = document.createElement("li");
+    li.innerHTML = employee.name
+//обернул li в span и добавил input для редактирования
+    let span = document.createElement("span");
+    span.innerHTML = li.innerHTML;
+    li.innerHTML = "";
+
+//input для редактирования name
+//обернул li в span и добавил input для редактирования
+span.addEventListener("click", function func() {
+    let input = document.createElement("input");
+    input.value = span.innerHTML;
+    span.innerHTML = "";
+    span.appendChild(input);
+
+    input.addEventListener("blur", function () {
+        span.innerHTML = this.value;
+        span.addEventListener("click", func);
+    });
+
+    span.removeEventListener("click", func);
+});
+
+//ссылка на удаление  работяг
+let remove = document.createElement("a");
+remove.href = "";
+remove.innerHTML = 'remove';
+
+remove.addEventListener('click', function (event) {
+    li.parentElement.removeChild(li);
+    event.preventDefault();
+});
+
+    link.appendChild(li);
+    li.appendChild(span);
+    li.appendChild(remove);
+    link.appendChild(li);
+}
+
+for(let employee of employees){
+    let li = document.createElement("li");
+    li.innerHTML = employee.age;
+//обернул li в span и добавил input для редактирования
+let span = document.createElement("span");
+span.innerHTML = li.innerHTML;
+li.innerHTML = "";
+
+//input для редактирования age
+//обернул li в span и добавил input для редактирования
+span.addEventListener("click", function func() {
+    let input = document.createElement("input");
+    input.value = span.innerHTML;
+    span.innerHTML = "";
+    span.appendChild(input);
+
+    input.addEventListener("blur", function () {
+        span.innerHTML = this.value;
+        span.addEventListener("click", func);
+    });
+
+    span.removeEventListener("click", func);
+});
+
+//ссылка на удаление  работяг
+let remove = document.createElement("a");
+remove.href = "";
+remove.innerHTML = 'remove';
+
+remove.addEventListener('click', function (event) {
+    li.parentElement.removeChild(li);
+    event.preventDefault();
+});
+
+link.appendChild(li);
+li.appendChild(span);
+li.appendChild(remove);
+
+    link.appendChild(li);
+}
+
+for (let employee of employees) {
+    let li = document.createElement("li");
+    li.innerHTML = employee.salary;
+
+    //обернул li в span и добавил input для редактирования
+    let span = document.createElement("span");
+    span.innerHTML = li.innerHTML;
+    li.innerHTML = "";
+    
+    //input для редактирования salary
+    //li.addEventListener("click", function func() {
+    //    let input = document.createElement("input");
+    //    input.value = li.innerHTML;
+    //    li.innerHTML = "";
+    //    li.appendChild(input);
+//
+    //    input.addEventListener("blur", function () {
+     //       li.innerHTML = this.value;
+     //       li.addEventListener("click", func);
+     //   });
+
+      //  li.removeEventListener("click", func);
+    //});
+
+    //input для редактирования salary
+    //обернул li в span и добавил input для редактирования
+    span.addEventListener("click", function func() {
+        let input = document.createElement("input");
+        input.value = span.innerHTML;
+        span.innerHTML = "";
+        span.appendChild(input);
+
+        input.addEventListener("blur", function () {
+            span.innerHTML = this.value;
+            span.addEventListener("click", func);
+        });
+
+        span.removeEventListener("click", func);
+    });
+
+    //ссылка на удаление  работяг
+    let remove = document.createElement("a");
+    remove.href = "";
+    remove.innerHTML = 'remove';
+
+    remove.addEventListener('click', function (event) {
+        li.parentElement.removeChild(li);
+        event.preventDefault();
+    });
+    
+    link.appendChild(li);
+    li.appendChild(span);
+    li.appendChild(remove);
+}
+let name = document.querySelector("#name");
+let age = document.querySelector("#age");
+let salary = document.querySelector("#salary");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    let li = document.createElement("li");
+    li.innerHTML = name.value;
+
+    let li2 = document.createElement("li");
+    li2.innerHTML = age.value;
+
+    let li3 = document.createElement("li");
+    li3.innerHTML = salary.value;
+
+    link.appendChild(li);
+    link.appendChild(li2);
+    link.appendChild(li3);
+});
+*/
+/* ************************************************** */
+                        //Поиск ячеек таблицы с помощью атрибута data
+            //Для решения задачи можно воспользоваться CSS селектором поиска по атрибуту и его значению
+/*
+let tds = document.querySelectorAll('#table td[data-col="2"]');  //css селектор
+
+for (let td of tds) {
+	this.innerHTML = '!';
+}
+*//*
+let col = 2;
+let tds = document.querySelectorAll('#table td[data-col="' + col + '"]');
+
+for (let td of tds) {
+    this.innerHTML = '!';
+}
+*//*
+let tds = document.querySelectorAll("#table td");
+
+for (let td of tds) {
+    td.addEventListener('click', function () {
+        let i = this.dataset.col;
+
+        for (let td of tds) {
+            if (td.dataset.col == i) {
+                td.classList.toggle('color1');
+            }
+        }
+    });
+}
+*//*
+let col = 2;
+let row = 3;
+let tds = document.querySelectorAll('#table td');
+//let trs = document.querySelectorAll('#table tr[data-row="' + row +'"]')
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    for(let td of tds){
+        let newCol = td.dataset.col;
+        let newRow = td.dataset.row;
+
+        if (newCol == col && newRow == row){
+            td.classList.add('color1');
+        }
+    }
+});
+*/
+                    //Добавление номера колонки и ряда в таблицу
+/*
+let tds = document.querySelector("#table");
+let button = document.querySelector("#button");
+
+button.addEventListener("click", function(){
+    for (let row of table.rows) {
+       // i++;
+        let j = 0;
+        
+
+        for (let cell of row.cells) {
+           // cell.dataset.row = i;
+            cell.dataset.col = ++j;
+        }
+    }
+});
+*//*
+let table = document.querySelector('table');
+let tds = document.querySelectorAll('td');
+let i = 0;
+
+for (var row of table.rows) {
+    let j = 0;
+    i++;
+
+    for (var cell of row.cells) {
+        cell.dataset.row = i;
+        cell.dataset.col = ++j;
+    }
+}
+
+for (var td of tds) {
+
+    td.addEventListener('click', function () {
+        console.log('Ряд: ' + this.dataset.row);
+        console.log('Ячейка: ' + this.dataset.col);
+    });
+}
+*//*
+let table = document.querySelector('table');
+let tds = document.querySelectorAll('td');
+let i = 0;
+
+for (var row of table.rows) {
+    let j = 0;
+    i++;
+
+    for (var cell of row.cells) {
+        cell.dataset.row = i;
+        cell.dataset.col = ++j;
+    }
+}
+
+for (var td of tds) {
+
+    td.addEventListener('click', function () {
+        let row = this.dataset.row;
+        let col = this.dataset.col;
+
+        if (row == col) {
+            this.classList.toggle('color1');
+        } else {
+            this.classList.toggle('color2');
+        }
+        console.log('Ряд: ' + this.dataset.row);
+        console.log('Ячейка: ' + this.dataset.col);
+    });
+}
+*/
+                    //Поиск ячеек таблицы через селектор CSS на JavaScript
+/*
+let td = document.querySelector('#table tr:nth-child(3) td:nth-child(2)');
+*//*
+let tds = document.querySelectorAll('#table td:nth-child(2)');
+
+for (let td of tds) {
+    td.innerHTML = '!';
+}
+*//*
+let tds = document.querySelectorAll('#table tr:nth-child(odd) td:nth-child(1)');
+
+for (let td of tds) {
+    td.innerHTML = '!';
+}
+*//*
+let tds = document.querySelectorAll("#table td:nth-child(3)");
+
+for(let td of tds){
+    td.classList.add("color1");
+}
+*//*
+let tds = document.querySelectorAll("#table tr:nth-child(3) td:nth-child(1)");
+
+for(let td of tds){
+    td.classList.add("color1");
+}
+*//*
+let tds = document.querySelectorAll("#table tr:nth-child(even) td:nth-child(odd)");
+
+for(let td of tds){
+    td.classList.add("color1");
+}
+*/
+/* ************************************************************************ */
+                        //Функции для работы с DOM элементом на JavaScript
+/*
+function setText(id, text) {
+	let elem = document.getElementById(id);
+	elem.innerHTML = text;
+}
+
+setText('elem1', 'text1');
+setText('elem2', 'text2');
+*//*
+function setText(id, text) {
+    let elem = document.querySelector('color1');
+    elem.innerHTML = text;
+}
+
+setText('elem1', 'text1');
+setText('elem2', 'text2');
+*//*
+function setAttr(selector, nameAttr, valueAttr){
+    let elem = document.querySelector(selector);
+    elem[nameAttr] = valueAttr;
+}
+
+setAttr("input", "type", "text");
+*/
+                    //Функции для работы с группой DOM элементов
+/*
+function setText(selector, text) {
+	let elems = document.querySelectorAll(selector);
+
+	for (let elem of elems) {
+		elem.innerHTML = text;
+	}
+}
+setText('.elem', 'text');
+*//*
+function appendText(selector, text) {
+    let elems = document.querySelectorAll(selector);
+
+    for(let elem of elems){
+        elem.innerHTML += text;
+    }
+}
+appendText(".elem", " полный shits");
+*/
+                        //Передача коллбэка для работы с DOM на JavaScript
+/*
+forEach('.elem', function() {
+	// функция применится к каждому элементу
+});
+*/
+//Пусть элементы, попавшие под селектор, по очереди попадают в первый параметр коллбэка:
+/*
+forEach('.elem', function (elem) {
+    console.log(elem); // выведет по очереди найденные элементы
+});
+*/
+//Давайте с помощью нашей функции найдем все элементы с классом elem и для 
+//каждого найденного элемента применим коллбэк, который возведет в 
+//квадрат текст каждого элемента:
+/*
+forEach('.elem', function (elem) {
+    elem.innerHTML = elem.innerHTML ** 2;
+});
+*/
+    //полная колл-бэк функция
+/*
+function forEach(selector, func) {
+	let elems = document.querySelectorAll(selector);
+
+	for (let elem of elems) {
+		func(elem);
+	}
+}
+*//*
+forEach(".elem", function(elem){
+    elem.innerHTML += "!";
+});
+*/
+                    //Передача порядкового номера в коллбэк на JavaScript
+/*
+forEach('.elem', function (elem, index) {
+    console.log(elem); // выведет элемент
+    console.log(index); // выведет порядковый номер элемента
+});
+
+forEach('.elem', function (elem, index) {
+    elem.innerHTML = elem.innerHTML + index;
+});
+
+function forEach(selector, func) {
+    let elems = document.querySelectorAll(selector);
+
+    for (let i = 0; i < elems.length; i++) {
+        func(elem, i);
+    }
+}
+*/
+    //работает
+/*
+function forEach(selector, func) {
+    let elems = document.querySelectorAll(selector);
+
+    for (let i = 0; i < elems.length; i++) {
+        func(elems[i], i);
+    }
+
+}
+
+forEach('.elem', function (elem, index) {
+    elem.innerHTML = index + '.' + elem.innerHTML;
+}); 
+*/
+                    //Передача DOM элемента параметром функции
+/*
+function setText(elem, text) {
+    elem.innerHTML = text;
+}
+
+let elem1 = document.getElementById('elem1');
+setText(elem1, 'text1');
+
+let elem2 = document.getElementById('elem2');
+setText(elem2, 'text2');
+*//*
+function appendText(elem, text){
+    elem.innerHTML += text;
+}
+
+let elem1 = document.querySelector("#elem1");
+appendText(elem1, " хуя");
+
+let elem2 = document.getElementById("elem2");
+appendText(elem2, " насос");
+*//*
+let elems = document.querySelectorAll(".elem"); //класс(.) id(#)
+
+for(let elem of elems){
+    appendText(elem, "!"); //перебрал циклом и задал параметры
+}
+
+function appendText(elem, text) {
+    elem.innerHTML += "!";  //добавил !
+}
+*//*
+let elem = document.querySelector("input");
+
+function setValue (elem, text){
+    elem.value = text;
+}
+
+setValue(elem, "text");
+*/
+                    //Передача DOM группы элементов параметрами функций
+/*
+let elems = document.querySelectorAll("p");
+setText(elems, 'text');
+
+function setText(elems, text) {
+    for (let elem of elems) {
+        elem.innerHTML = text;
+    }
+}
+*//*
+function appendText(elems, text){
+    for(let elem of elems){
+        elem.innerHTML += text;
+    }
+}
+
+let elems = document.querySelectorAll(".elem"); 
+appendText(elems, "text разный");
+*//*
+function appendElem(elem, text){
+    //let ul = document.querySelector(".link")
+    let li = document.createElement("li");
+    li.innerHTML = text;
+    
+    elem.appendChild(li);
+}
+
+let elem = document.querySelector(".link");
+appendElem(elem, "...");
+appendElem(elem, "sdfsdf");
+appendElem(elem, "fffff");
+appendElem(elem, "press F");
+*//*
+function appendElem(elems, text){
+    //let ul = document.querySelector(".link")
+    for(let num of arr){
+        let li = document.createElement("li");
+        li.innerHTML = num;
+        elems.appendChild(li);
+    }
+}
+
+let elems = document.querySelector(".link");
+let arr = [1, 2, 3, 4, 5];
+
+appendElem(elems, "text")
+*/
+                    //Функция для создания HTML таблиц на JavaScript
+    //Давайте сделаем внутри этого дива таблицу 3 на 4:
+/*
+let div = document.querySelector('#elem');
+createTable(3, 4, div);
+*/
+    //Пусть теперь у нас даны два дива:
+    //Давайте сделаем свою таблицу в каждом из этих дивов:
+/*
+let div1 = document.querySelector('#elem1');
+createTable(3, 4, div1);
+
+let div2 = document.querySelector('#elem2');
+createTable(5, 6, div2);
+*//*
+function createTable(rows, cols, parent) {
+    let table = document.createElement('table');
+
+    // тут создадим таблицу с rows рядами и cols колонками
+    for(let i= 0; i < rows; i++){
+        let tr = document.createElement("tr");
+        table.appendChild(tr);
+
+        for(let j = 0; j < cols; j++){
+            let td = document.createElement("td");
+            table.appendChild(td);
+        }
+    }
+
+    parent.appendChild(table);
+}
+
+let parent = document.querySelector(".parent")
+createTable(3, 4, parent)
+*/
+                //Возврат таблицы из функции на JavaScript
+/*
+let div = document.querySelector('#elem');
+let table = createTable(3, 4);
+div.appendChild(table);
+*/
+    //Можно переписать короче:
+/*
+let div = document.querySelector('#elem');
+div.appendChild(createTable(3, 4));
+*//*
+let div = document.querySelector('#elem');
+
+let table = createTable(3, 4);
+table.style.color = 'red';
+
+div.appendChild(table);
+*/
+    //это переделать
+/*
+function createTable(rows, cols, parent) {
+    let table = document.createElement('table');
+
+    // тут создадим таблицу с rows рядами и cols колонками
+    for (let i = 0; i < rows; i++) {
+        let tr = document.createElement("tr");
+        table.appendChild(tr);
+
+        for (let j = 0; j < cols; j++) {
+            let td = document.createElement("td");
+            table.appendChild(td);
+        }
+    }
+
+    //parent.appendChild(table);
+}
+
+//let parent = document.querySelector(".parent")
+//createTable(3, 4, parent)
+
+    //в это
+
+let div = document.querySelector(".parent");
+
+let parent = createTable(3, 4);
+parent.style.color = "red";
+
+div.appendChild(parent);
+*//*
+let div = document.querySelector('#elem');
+let tableLink = createTable(2, 3);
+div.appendChild(tableLink);
+
+function createTable(rows, cols) {
+    table = document.createElement('table');
+
+    for (let i = 0; i < rows; i++) {
+        tr = document.createElement('tr');
+        table.appendChild(tr);
+
+        for (let j = 0; j < cols; j++) {
+            td = document.createElement('td');
+            tr.append(td);
+        }
+    }
+    return table;
+}
+*/
+                        //Функция для создания таблицы из двухмерного массива
+    //То есть приведенный код предыдущего урока преобразуется вот в такой:
+/*
+let div = document.querySelector('#elem');
+
+let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+let table = createTableByArr(arr);
+
+div.appendChild(table);
+
+function createTableByArr(rows, cols){
+    let table = document.createElement("table");
+    
+    for(let subArr of arr) {
+        let tr = document.createElement("tr");
+        table.appendChild(tr);
+
+        for(let value of subArr){
+            let td = document.createElement("td");
+            td.textContent = value;  //или innerHTML
+            tr.appendChild(td);
+        }
+    }
+    return table;
+}
+*/
+                        //Создание HTML таблицы из одномерного массива на JavaScript
+/*
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    
+    //Давайте будем хранить желаемое количество колонок в переменной cols:
+
+let cols = 3;
+*/
+//let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+//let cols = 3;
+
+//let table = createTableByArr(convertArr(arr, cols));
+/*
+function convertArr(arr, cols) {
+    let rows = arr.length / cols; // вычислим кол-во рядов таблицы
+    let newArr = []; // объявим новый массив
+    let k = 0;
+
+    for (let i = 0; i < rows; i++) {
+        newArr[i] = []; // новый массив newArr делаем двумерным
+
+        for (let j = 0; j < cols; j++) {
+            // добавляем в новый массив newArr по одному элементы массива arr
+            newArr[i].push(arr[k++]);
+        }
+    }
+    return newArr;
+}
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let cols = 3;
+
+console.table(convertArr(arr, cols));
+*//*
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let cols = 4;
+let modifiedArr = convertArr(arr, cols);
+
+let div = document.querySelector('#elem');
+createTableByArr(modifiedArr, div);
+
+function createTableByArr(arr, parentElem) {
+    table = document.createElement('table');
+    parentElem.appendChild(table);
+
+    for (let subArr of arr) {
+        tr = document.createElement('tr');
+        table.appendChild(tr);
+
+        for (let value of subArr) {
+            td = document.createElement('td');
+            td.textContent = value;
+            tr.append(td);
+        }
+    }
+    return table;
+}
+
+function convertArr(arr, cols) {
+    let rows = arr.length / cols; // вычислим кол-во рядов таблицы
+    let newArr = []; // объявим новый массив
+    let k = 0;
+
+    for (let i = 0; i < rows; i++) {
+        newArr[i] = []; // новый массив newArr делаем двумерным
+
+        for (let j = 0; j < cols; j++) {
+            // добавляем в новый массив newArr по одному элементы массива arr
+            newArr[i].push(arr[k++]);
+        }
+    }
+    return newArr;
+}
+*/
+                    //Нехватка элементов в массиве при создании таблицы
+/*
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let cols = 4;
+
+let twoDimArr = convertArr(arr, cols);
+let normalTwoDimArr = normalizeArr(twoDimArr, cols, '');
+
+let table = createTableByArr(normalTwoDimArr);
+
+function normalizeArr(twoDimArr, symb)
+{
+let normalizeArr = [];
+
+for (let i = 0; i < twoDimArr.length; i++) {
+normalizeArr[i] = [];
+
+let arr = twoDimArr[i].map(function(elem) {
+return elem == undefined ? elem = '-' : elem;
+});
+
+for (var j = 0; j < arr.length; j++) {
+normalizeArr[i].push(arr[j]);
+}
+}
+return normalizeArr;
+}
+*//*
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let cols = 5;
+
+let twoDimArr = convertArr(arr, cols);
+let editedArr = normalizeArr(twoDimArr, '-');
+
+let div = document.querySelector('#elem');
+createTableByArr(editedArr, div);
+
+function createTableByArr(arr, parentElem) {
+    table = document.createElement('table');
+    parentElem.appendChild(table);
+
+    for (let subArr of arr) {
+        tr = document.createElement('tr');
+        table.appendChild(tr);
+
+        for (let value of subArr) {
+            td = document.createElement('td');
+            td.textContent = value;
+            tr.append(td);
+        }
+    }
+    return table;
+}
+
+function normalizeArr(twoDimArr, symb) {
+    let normalizeArr = [];
+
+    for (let i = 0; i < twoDimArr.length; i++) {
+        normalizeArr[i] = [];
+
+        let arr = twoDimArr[i].map(function (elem) {
+            return elem == undefined ? elem = '-' : elem;
+        });
+
+        for (var j = 0; j < arr.length; j++) {
+            normalizeArr[i].push(arr[j]);
+        }
+    }
+    return normalizeArr;
+}
+
+function convertArr(arr, cols) {
+    let rows = arr.length / cols; // вычислим кол-во рядов таблицы
+    let twoDimArr = []; // объявим новый массив
+    let k = 0;
+
+    for (let i = 0; i < rows; i++) {
+        twoDimArr[i] = []; // новый массив newArr делаем двумерным
+
+        for (let j = 0; j < cols; j++) {
+            // добавляем в новый массив newArr по одному элементы массива arr
+            twoDimArr[i].push(arr[k++]);
+        }
+    }
+    return twoDimArr;
+}
+*/
+
+
+/* ************************************************************** */
+                        //ШПОРГАЛКИ
+/*
+this.removeEventListener('click', func);    // отвяжем событие
+
+span.addEventListener('click', func);   // повесим событие обратно
+
+let input = document.createElement('input');    //cоздание импута(любого другого)
+
+input.value = this.innerHTML;   // сначала записываем текст абзаца в инпут
+
+span.innerHTML = '';    //  убираем текст абзаца
+
+span.appendChild(input);    // вставляем инпут(любой другой obj)
+
+span.addEventListener('click', function func() { //событие(click, blur, focus, input(сразу пушит то что записано))
+
+link.parentElement.removeChild(link);  //удаление объкта
+
+parentElement  // показывает на DOM элемент, если тот есть, если нет то null
+
+removeChild(obj) // удаляет дочернии элемент и возвращает его
+    //добавление колонок
+
+let tables = document.querySelectorAll("#table tr");
+for (let tr of tables) {
+    let td = document.createElement('td');
+    tr.appendChild(td);
+}
+
+event // как я понял, оно тип отсанавливает деиствие, если при клике цвет становится  красным
+         но затем опять белеет, то с евеном он остается красным
+
+toggle  // добавляет класс или убирает, в зависимости есть или нет
+
+previousElementSibling //возвращает рядом стоящии элемент слева
+
+this.classList.add("active"); //добавление класса из style.css
+*/
